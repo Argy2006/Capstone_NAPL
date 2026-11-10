@@ -1,0 +1,363 @@
+/* ==========================================================================
+   TaskFlow – Personal Task Manager
+   Design System: Earthy Warm Minimalist
+   Palette: Warm Ivory, Soft Cream, Sage Green, Muted Olive, Terracotta
+   ========================================================================== */
+
+/* Root Design Tokens */
+:root {
+  /* Color Palette matching Stitch */
+  --bg-ivory: #fbfaf1;
+  --surface-cream: #efeee5;
+  --surface-card: #ffffff;
+  --primary-sage: #526349;
+  --primary-sage-container: #84977a;
+  --secondary-olive: #596241;
+  --highlight-terracotta: #8d4d37;
+  --highlight-terracotta-container: #c97e65;
+  --text-charcoal: #1b1c17;
+  --text-muted: #444840;
+  --border-subtle: #c4c8be;
+}
+
+/* Header & Navigation */
+.app-header {
+  background-color: var(--surface-card);
+  border-bottom: 1px solid var(--border-subtle);
+  padding: 1rem 2rem;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  position: sticky;
+  top: 0;
+  z-index: 100;
+}
+
+.brand {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+}
+
+.brand-icon {
+  width: 36px;
+  height: 36px;
+  background-color: var(--primary-sage-light);
+  color: var(--primary-sage);
+  border-radius: var(--radius-md);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-weight: 700;
+  font-size: 1.2rem;
+  border: 1px solid var(--border-subtle);
+}
+
+.brand-title {
+  font-size: 1.25rem;
+  font-weight: 700;
+  color: var(--text-charcoal);
+  letter-spacing: -0.02em;
+}
+
+.brand-subtitle {
+  font-size: 0.8rem;
+  color: var(--text-muted);
+  font-weight: 400;
+}
+
+.header-status {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  font-size: var(--font-size-sm);
+  color: var(--secondary-olive);
+  background-color: var(--secondary-olive-light);
+  padding: 0.4rem 0.85rem;
+  border-radius: 9999px;
+  font-weight: 500;
+}
+
+.status-dot {
+  width: 8px;
+  height: 8px;
+  background-color: var(--primary-sage);
+  border-radius: 50%;
+  display: inline-block;
+}
+
+/* Main Container */
+.container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 2rem 1.5rem;
+  flex: 1;
+  width: 100%;
+}
+
+/* Status Banner */
+.status-banner {
+  background-color: var(--surface-cream);
+  border: 1px solid var(--border-subtle);
+  border-left: 4px solid var(--primary-sage);
+  border-radius: var(--radius-md);
+  padding: 1rem 1.25rem;
+  margin-bottom: 2rem;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 1rem;
+}
+
+.status-banner-content h3 {
+  font-size: 1rem;
+  font-weight: 600;
+  color: var(--text-charcoal);
+  margin-bottom: 0.25rem;
+}
+
+.status-banner-content p {
+  font-size: var(--font-size-sm);
+  color: var(--text-muted);
+}
+
+.status-badge {
+  display: inline-block;
+  background-color: var(--highlight-terracotta-light);
+  color: var(--highlight-terracotta);
+  border: 1px solid rgba(217, 107, 67, 0.2);
+  padding: 0.25rem 0.75rem;
+  border-radius: 9999px;
+  font-size: 0.75rem;
+  font-weight: 600;
+  white-space: nowrap;
+}
+
+/* Dashboard Grid */
+.dashboard-grid {
+  display: grid;
+  grid-template-columns: 280px 1fr;
+  gap: 2rem;
+}
+
+@media (max-width: 900px) {
+  .dashboard-grid {
+    grid-template-columns: 1fr;
+  }
+}
+
+/* Sidebar & Stats */
+.sidebar {
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+}
+
+.card {
+  background-color: var(--surface-card);
+  border: 1px solid var(--border-subtle);
+  border-radius: var(--radius-lg);
+  padding: 1.5rem;
+  box-shadow: var(--shadow-card);
+}
+
+.card-title {
+  font-size: var(--font-size-lg);
+  font-weight: 600;
+  color: var(--text-charcoal);
+  margin-bottom: 1rem;
+}
+
+.stats-list {
+  display: flex;
+  flex-direction: column;
+  gap: 0.75rem;
+}
+
+.stat-item {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0.5rem 0;
+  border-bottom: 1px solid var(--surface-cream);
+  font-size: var(--font-size-sm);
+}
+
+.stat-item:last-child {
+  border-bottom: none;
+}
+
+.stat-value {
+  font-weight: 600;
+  padding: 0.15rem 0.5rem;
+  border-radius: var(--radius-sm);
+  background-color: var(--surface-cream);
+}
+
+/* Main Content Area */
+.main-content {
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+}
+
+.controls-bar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 1rem;
+}
+
+.search-input {
+  background-color: var(--surface-card);
+  border: 1px solid var(--border-subtle);
+  border-radius: var(--radius-md);
+  padding: 0.65rem 1rem;
+  font-size: var(--font-size-sm);
+  color: var(--text-charcoal);
+  min-width: 260px;
+  outline: none;
+  transition: border-color 0.2s ease;
+}
+
+.search-input:focus {
+  border-color: var(--border-focus);
+}
+
+.btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.5rem;
+  font-family: inherit;
+  font-size: var(--font-size-sm);
+  font-weight: 600;
+  padding: 0.65rem 1.25rem;
+  border-radius: var(--radius-md);
+  cursor: pointer;
+  border: none;
+  transition: all 0.2s ease;
+}
+
+.btn-primary {
+  background-color: var(--primary-sage);
+  color: #FFFFFF;
+}
+
+.btn-primary:hover {
+  background-color: var(--primary-sage-hover);
+}
+
+.btn-secondary {
+  background-color: var(--surface-cream);
+  color: var(--text-charcoal);
+  border: 1px solid var(--border-subtle);
+}
+
+.btn-secondary:hover {
+  background-color: #ECE5DA;
+}
+
+/* Task List & Empty State */
+.task-list {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+
+.task-card {
+  background-color: var(--surface-card);
+  border: 1px solid var(--border-subtle);
+  border-radius: var(--radius-lg);
+  padding: 1.25rem 1.5rem;
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  gap: 1rem;
+  box-shadow: var(--shadow-subtle);
+  transition: transform 0.15s ease, box-shadow 0.15s ease;
+}
+
+.task-card:hover {
+  box-shadow: var(--shadow-card);
+}
+
+.task-info h4 {
+  font-size: var(--font-size-base);
+  font-weight: 600;
+  color: var(--text-charcoal);
+  margin-bottom: 0.35rem;
+}
+
+.task-info p {
+  font-size: var(--font-size-sm);
+  color: var(--text-muted);
+  margin-bottom: 0.75rem;
+}
+
+.task-meta {
+  display: flex;
+  gap: 0.5rem;
+  align-items: center;
+  flex-wrap: wrap;
+}
+
+.tag {
+  font-size: 0.75rem;
+  font-weight: 600;
+  padding: 0.2rem 0.55rem;
+  border-radius: var(--radius-sm);
+}
+
+.tag-priority-high {
+  background-color: var(--highlight-terracotta-light);
+  color: var(--highlight-terracotta);
+}
+
+.tag-priority-medium {
+  background-color: #FEF3C7;
+  color: #92400E;
+}
+
+.tag-priority-low {
+  background-color: var(--primary-sage-light);
+  color: var(--secondary-olive);
+}
+
+.tag-status {
+  background-color: var(--surface-cream);
+  color: var(--text-muted);
+}
+
+.empty-state {
+  text-align: center;
+  padding: 3rem 1.5rem;
+  background-color: var(--surface-card);
+  border: 1px dashed var(--border-subtle);
+  border-radius: var(--radius-lg);
+}
+
+.empty-state h4 {
+  font-size: var(--font-size-lg);
+  color: var(--text-charcoal);
+  margin-bottom: 0.5rem;
+}
+
+.empty-state p {
+  font-size: var(--font-size-sm);
+  color: var(--text-muted);
+  max-width: 480px;
+  margin: 0 auto;
+}
+
+/* Footer */
+.app-footer {
+  margin-top: auto;
+  border-top: 1px solid var(--border-subtle);
+  background-color: var(--surface-card);
+  padding: 1.25rem 2rem;
+  text-align: center;
+  font-size: var(--font-size-sm);
+  color: var(--text-muted);
+}

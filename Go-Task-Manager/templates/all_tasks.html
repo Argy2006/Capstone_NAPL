@@ -1,0 +1,2032 @@
+<!DOCTYPE html>
+
+<html lang="en">
+
+<head>
+  <meta charset="utf-8" />
+  <meta content="width=device-width, initial-scale=1.0" name="viewport" />
+  <meta content="web_dashboard" name="shell-type" />
+  <link
+    href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200"
+    rel="stylesheet" />
+  <link href="https://fonts.googleapis.com" rel="preconnect" />
+  <link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect" />
+  <link
+    href="https://fonts.googleapis.com/css2?family=DM+Sans:ital,opsz,wght@0,9..40,400..700;1,9..40,400..700&amp;family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&amp;display=swap"
+    rel="stylesheet" />
+  <link
+    href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap"
+    rel="stylesheet" />
+  <style>
+    @layer base {
+
+      html,
+      body {
+        margin: 0;
+        padding: 0;
+      }
+
+      body {
+        overscroll-behavior: none;
+      }
+
+      main>:first-child {
+        margin-top: 0 !important;
+      }
+
+      main>:last-child {
+        margin-bottom: 0 !important;
+      }
+    }
+
+    ::-webkit-scrollbar {
+      display: none;
+    }
+  </style>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script id="tailwind-config">tailwind.config = {
+      darkMode: "class",
+      theme: {
+        extend: {
+          "colors": {
+            "surface-container": "#efeee5",
+            "on-error-container": "#93000a",
+            "on-primary-fixed": "#101f0b",
+            "error-container": "#ffdad6",
+            "secondary-container": "#dae4ba",
+            "error": "#ba1a1a",
+            "inverse-primary": "#b9ccad",
+            "on-surface-variant": "#444840",
+            "surface-tint": "#526349",
+            "on-tertiary": "#ffffff",
+            "on-secondary": "#ffffff",
+            "surface": "#fbfaf1",
+            "on-surface": "#1b1c17",
+            "secondary": "#596241",
+            "inverse-surface": "#30312b",
+            "tertiary": "#8d4d37",
+            "background": "#fbfaf1",
+            "surface-bright": "#fbfaf1",
+            "surface-container-highest": "#e4e3da",
+            "on-secondary-container": "#5d6645",
+            "on-secondary-fixed": "#171e05",
+            "surface-variant": "#e4e3da",
+            "surface-container-lowest": "#ffffff",
+            "on-background": "#1b1c17",
+            "on-primary": "#ffffff",
+            "tertiary-fixed-dim": "#ffb59d",
+            "primary-fixed-dim": "#b9ccad",
+            "on-tertiary-container": "#4c1b09",
+            "outline-variant": "#c4c8be",
+            "primary-container": "#84977a",
+            "on-tertiary-fixed": "#380c00",
+            "on-tertiary-fixed-variant": "#703622",
+            "on-secondary-fixed-variant": "#414a2b",
+            "outline": "#747870",
+            "on-primary-container": "#1f2e19",
+            "surface-container-high": "#e9e8e0",
+            "surface-dim": "#dbdad2",
+            "tertiary-container": "#c97e65",
+            "primary": "#526349",
+            "primary-fixed": "#d4e9c8",
+            "surface-container-low": "#f5f4eb",
+            "secondary-fixed-dim": "#c1cba2",
+            "secondary-fixed": "#dde7bd",
+            "on-primary-fixed-variant": "#3a4b33",
+            "on-error": "#ffffff",
+            "tertiary-fixed": "#ffdbd0",
+            "inverse-on-surface": "#f2f1e8"
+          },
+          "borderRadius": {
+            "DEFAULT": "0.25rem",
+            "lg": "0.5rem",
+            "xl": "0.75rem",
+            "full": "9999px"
+          },
+          "spacing": {
+            "gutter-sm": "1rem",
+            "space-md": "1rem",
+            "space-xl": "2.5rem",
+            "space-xs": "0.25rem",
+            "space-lg": "1.5rem",
+            "margin-sm": "1rem",
+            "margin": "2rem",
+            "space-sm": "0.5rem",
+            "gutter": "1.5rem"
+          },
+          "fontFamily": {
+            "body-sm": [
+              "Inter"
+            ],
+            "label-md": [
+              "Inter"
+            ],
+            "body-lg": [
+              "Inter"
+            ],
+            "display-lg": [
+              "DM Sans"
+            ],
+            "headline-md": [
+              "DM Sans"
+            ],
+            "headline-lg": [
+              "DM Sans"
+            ],
+            "body-md": [
+              "Inter"
+            ],
+            "headline-sm": [
+              "DM Sans"
+            ],
+            "display-lg-mobile": [
+              "DM Sans"
+            ],
+            "label-sm": [
+              "Inter"
+            ]
+          },
+          "fontSize": {
+            "body-sm": [
+              "13px",
+              {
+                "lineHeight": "18px",
+                "fontWeight": "400"
+              }
+            ],
+            "label-md": [
+              "12px",
+              {
+                "lineHeight": "16px",
+                "letterSpacing": "0.02em",
+                "fontWeight": "500"
+              }
+            ],
+            "body-lg": [
+              "16px",
+              {
+                "lineHeight": "24px",
+                "fontWeight": "400"
+              }
+            ],
+            "display-lg": [
+              "40px",
+              {
+                "lineHeight": "48px",
+                "letterSpacing": "-0.02em",
+                "fontWeight": "600"
+              }
+            ],
+            "headline-md": [
+              "22px",
+              {
+                "lineHeight": "28px",
+                "letterSpacing": "-0.01em",
+                "fontWeight": "600"
+              }
+            ],
+            "headline-lg": [
+              "28px",
+              {
+                "lineHeight": "36px",
+                "letterSpacing": "-0.015em",
+                "fontWeight": "600"
+              }
+            ],
+            "body-md": [
+              "14px",
+              {
+                "lineHeight": "20px",
+                "fontWeight": "400"
+              }
+            ],
+            "headline-sm": [
+              "18px",
+              {
+                "lineHeight": "24px",
+                "fontWeight": "500"
+              }
+            ],
+            "display-lg-mobile": [
+              "32px",
+              {
+                "lineHeight": "40px",
+                "letterSpacing": "-0.015em",
+                "fontWeight": "600"
+              }
+            ],
+            "label-sm": [
+              "11px",
+              {
+                "lineHeight": "14px",
+                "letterSpacing": "0.03em",
+                "fontWeight": "500"
+              }
+            ]
+          }
+        },
+      },
+    }</script>
+  <link rel="stylesheet" href="/static/css/style.css" />
+</head>
+
+<body class="bg-surface font-body-md text-on-surface">
+  <aside
+    class="fixed left-0 top-0 h-full w-64 bg-surface-container-low z-50 flex flex-col justify-between p-space-md shadow-[0_1px_8px_rgba(0,0,0,0.04)]">
+    <div class="flex flex-col gap-space-lg">
+      <div class="flex items-center gap-space-sm px-space-xs"><img alt="TaskFlow Logo" class="h-8 w-auto object-contain"
+          src="https://lh3.googleusercontent.com/aida-public/AB6AXuBM7zzawRlsE71Lw54PYr_9o_UcZ-tF9HEPWIzVvy_2pc1jFt1TWo-3F6lpFBDV8JYqK3LfWjq8WrMp36AskGMZwyTDyefIbgae0mm_XYx1du_TM5k1g9sdZlYUnruwIEDiLh5pnWs9brgYsr2culO0qUJIK2B3COVDA5A4tQIW_dCwl-cmWHrTW6GdvF2fDlMRr-UgLVcEoVJs2qj1sZFizLKQ0QY3Ru6qQjIaFSM" />
+        <div class="flex flex-col"><span
+            class="font-headline-sm text-headline-sm text-on-surface leading-tight">TaskFlow</span><span
+            class="font-label-sm text-label-sm text-on-surface-variant">Personal Task Manager</span></div>
+      </div>
+      <nav class="flex flex-col gap-space-xs"
+        data-active-classes="bg-primary-container text-on-primary-container font-medium rounded-full"><a
+          class="flex items-center gap-space-sm px-space-md py-space-sm rounded-full text-on-surface-variant hover:bg-surface-container-high hover:text-on-surface transition-colors"
+          data-path="dashboard" href="/"><span class="material-symbols-outlined text-lg">dashboard</span><span
+            class="font-body-md text-body-md">Dashboard</span></a><a aria-current="page"
+          class="flex items-center gap-space-sm px-space-md py-space-sm transition-colors bg-primary-container text-on-primary-container font-medium rounded-full"
+          data-path="all-tasks" href="/tasks"><span class="material-symbols-outlined text-lg">task_alt</span><span
+            class="font-body-md text-body-md">All Tasks</span></a><a
+          class="flex items-center gap-space-sm px-space-md py-space-sm rounded-full text-on-surface-variant hover:bg-surface-container-high hover:text-on-surface transition-colors"
+          data-path="in-progress" href="#"><span class="material-symbols-outlined text-lg">pending_actions</span><span
+            class="font-body-md text-body-md">In Progress</span></a><a
+          class="flex items-center gap-space-sm px-space-md py-space-sm rounded-full text-on-surface-variant hover:bg-surface-container-high hover:text-on-surface transition-colors"
+          data-path="completed" href="#"><span class="material-symbols-outlined text-lg">check_circle</span><span
+            class="font-body-md text-body-md">Completed</span></a><a
+          class="flex items-center justify-between px-space-md py-space-sm rounded-full text-on-surface-variant hover:bg-surface-container-high hover:text-on-surface transition-colors"
+          data-path="overdue" href="#">
+          <div class="flex items-center gap-space-sm"><span
+              class="material-symbols-outlined text-lg">warning</span><span
+              class="font-body-md text-body-md">Overdue</span></div><span
+            class="bg-tertiary-fixed text-on-tertiary-fixed font-label-sm text-label-sm px-space-xs py-0.5 rounded-full">2</span>
+        </a><a
+          class="flex items-center gap-space-sm px-space-md py-space-sm rounded-full text-on-surface-variant hover:bg-surface-container-high hover:text-on-surface transition-colors"
+          data-path="settings" href="#"><span class="material-symbols-outlined text-lg">settings</span><span
+            class="font-body-md text-body-md">Settings</span></a></nav>
+    </div>
+    <div class="flex flex-col gap-space-sm pt-space-md">
+      <div
+        class="flex items-center gap-space-sm p-space-sm rounded-lg bg-surface-container-lowest shadow-[0_1px_4px_rgba(0,0,0,0.03)]">
+        <img alt="Profile" class="w-8 h-8 rounded-full object-cover"
+          src="https://lh3.googleusercontent.com/aida-public/AB6AXuC-i5Yp1QtDZoApzb7whK6uoOlLpatGZG5cm4KRF_Pi0moadM0S9FPFuX_or9wOku-al9jowKWz8hL2VnxcMfc1u11Lg7fh36tRsODDsS6uKYrWnAjFYlFzIlaxXr49xklvs6Un_0EVMPI8NC4TeTqmuBY1e2W2Hx8oDiRTsW7dPDKJoySf8MIutGXweOcq0yDAxy9z2yFe9uvq3pjJ5cYOJ2s5oHdlK7NqTroyxmE" />
+        <div class="flex flex-col overflow-hidden"><span
+            class="font-label-md text-label-md text-on-surface truncate">Alex Rivera</span><span
+            class="font-label-sm text-label-sm text-on-surface-variant truncate">CSE Capstone Team</span></div>
+      </div>
+      <div class="px-space-xs"><span class="font-label-sm text-label-sm text-outline">v1.0.4 â€¢ Go Backend</span></div>
+    </div>
+  </aside>
+  <div class="pl-64 flex flex-col min-h-screen">
+    <header
+      class="fixed top-0 left-64 right-0 h-16 bg-surface/80 backdrop-blur-xl z-40 shadow-[0_1px_8px_rgba(0,0,0,0.04)]">
+      <div class="h-16 w-full px-gutter flex items-center justify-between gap-space-md">
+        <div class="flex flex-col"><span class="font-headline-sm text-headline-sm text-on-surface leading-tight">Good
+            morning!</span><span class="font-body-sm text-body-sm text-on-surface-variant">Let's make today
+            productive.</span></div>
+        <div class="flex-1 max-w-md hidden md:flex items-center relative"><span
+            class="material-symbols-outlined absolute left-3 text-outline text-lg pointer-events-none">search</span><input
+            class="w-full pl-9 pr-16 py-space-xs bg-surface-container-lowest rounded-lg font-body-sm text-body-sm text-on-surface placeholder:text-outline focus:outline-none focus:ring-1 focus:ring-primary shadow-[0_1px_4px_rgba(0,0,0,0.03)]"
+            placeholder="Search tasks or projects..." type="text" /><span
+            class="absolute right-2.5 font-label-sm text-label-sm text-on-surface-variant bg-surface-container px-space-xs py-0.5 rounded">Cmd+K</span>
+        </div>
+        <div class="flex items-center gap-space-md">
+          <div class="hidden lg:flex items-center gap-space-xs text-on-surface-variant"><span
+              class="material-symbols-outlined text-lg">calendar_today</span><span
+              class="font-body-sm text-body-sm">Wednesday, Oct 24, 2024</span></div><button
+            class="flex items-center justify-center w-8 h-8 rounded-full hover:bg-surface-container-high hover:text-on-surface text-on-surface-variant transition-colors"><span
+              class="material-symbols-outlined text-lg">notifications</span></button><button
+            class="flex items-center gap-space-xs bg-primary-container text-on-primary-container font-label-md text-label-md px-space-md py-space-sm rounded-lg hover:bg-primary hover:text-on-primary transition-colors shadow-[0_1px_4px_rgba(0,0,0,0.03)]"><span
+              class="material-symbols-outlined text-base">add</span><span>Add New Task</span></button>
+        </div>
+      </div>
+    </header>
+    <main class="w-full pt-16 flex-1 bg-surface-container-lowest">
+      <div class="flex flex-col w-full">
+        <!-- Top Visual Subtle Ambient Decorator -->
+        <div class="relative w-full overflow-hidden pb-space-lg px-gutter pt-space-md">
+          <div
+            class="absolute -top-24 right-1/4 w-96 h-96 rounded-full bg-secondary-container/20 blur-3xl pointer-events-none">
+          </div>
+          <div
+            class="absolute -top-12 right-12 w-64 h-64 rounded-full bg-tertiary-fixed/30 blur-2xl pointer-events-none">
+          </div>
+          <!-- 1. PAGE HEADER -->
+          <div class="relative z-10 flex flex-col md:flex-row md:items-end justify-between gap-space-md pb-space-md">
+            <div class="flex flex-col gap-space-xs">
+              <div class="flex items-center gap-space-sm">
+                <span
+                  class="font-label-sm text-label-sm px-space-sm py-0.5 rounded-full bg-secondary-container text-on-secondary-container font-medium tracking-wide">CAPSTONE
+                  REPO â€¢ CSE-2024</span>
+                <span class="font-label-sm text-label-sm text-outline">â€¢ Go v1.22.4</span>
+              </div>
+              <div class="flex items-baseline gap-space-sm">
+                <h1 class="font-display-lg text-display-lg text-on-surface tracking-tight">All Tasks</h1>
+                <span
+                  class="font-label-md text-label-md text-on-surface-variant bg-surface-container px-space-sm py-0.5 rounded-full"
+                  id="taskCountBadge">Showing 24 of 24 tasks</span>
+              </div>
+              <p class="font-body-md text-body-md text-on-surface-variant max-w-xl">
+                Manage, organize, and prioritize your full engineering workflow across microservices, databases, and
+                client contracts.
+              </p>
+            </div>
+            <!-- Action buttons -->
+            <div class="flex items-center flex-wrap gap-space-sm">
+              <!-- Export Go Tooling -->
+              <div class="relative">
+                <button
+                  class="flex items-center gap-space-xs bg-surface-container-low hover:bg-surface-container text-on-surface font-label-md text-label-md px-space-md py-space-sm rounded-lg shadow-sm transition-all"
+                  id="exportDropdownBtn" onclick="toggleExportMenu()">
+                  <span class="material-symbols-outlined text-base">file_download</span>
+                  <span>Export</span>
+                  <span class="material-symbols-outlined text-xs">expand_more</span>
+                </button>
+                <div
+                  class="hidden absolute right-0 mt-1.5 w-44 bg-surface-container-lowest rounded-lg shadow-md z-30 py-space-xs flex flex-col"
+                  id="exportMenu">
+                  <button
+                    class="text-left px-space-md py-space-xs font-body-sm text-body-sm text-on-surface hover:bg-surface-container-low flex items-center gap-space-xs"
+                    onclick="triggerExport('CSV')">
+                    <span class="material-symbols-outlined text-sm text-outline">table_view</span> CSV Dataset
+                  </button>
+                  <button
+                    class="text-left px-space-md py-space-xs font-body-sm text-body-sm text-on-surface hover:bg-surface-container-low flex items-center gap-space-xs"
+                    onclick="triggerExport('JSON')">
+                    <span class="material-symbols-outlined text-sm text-outline">data_object</span> Go Struct JSON
+                  </button>
+                  <button
+                    class="text-left px-space-md py-space-xs font-body-sm text-body-sm text-on-surface hover:bg-surface-container-low flex items-center gap-space-xs"
+                    onclick="triggerExport('GORM Migration')">
+                    <span class="material-symbols-outlined text-sm text-outline">database</span> SQL Seed Fixture
+                  </button>
+                </div>
+              </div>
+              <!-- View Switcher -->
+              <div class="flex items-center bg-surface-container-low p-0.5 rounded-lg shadow-sm">
+                <button
+                  class="flex items-center gap-space-xs px-space-sm py-1.5 rounded-md font-label-md text-label-md bg-surface-container-lowest text-on-surface shadow-sm transition-all"
+                  id="viewBtnTable" onclick="switchView('table')">
+                  <span class="material-symbols-outlined text-base">table_rows</span>
+                  <span class="hidden sm:inline">Table</span>
+                </button>
+                <button
+                  class="flex items-center gap-space-xs px-space-sm py-1.5 rounded-md font-label-md text-label-md text-on-surface-variant hover:text-on-surface transition-all"
+                  id="viewBtnKanban" onclick="switchView('kanban')">
+                  <span class="material-symbols-outlined text-base">view_kanban</span>
+                  <span class="hidden sm:inline">Kanban</span>
+                </button>
+              </div>
+              <!-- Add Task Modal trigger -->
+              <button
+                class="flex items-center gap-space-xs bg-primary text-on-primary hover:bg-primary-container hover:text-on-primary-container font-label-md text-label-md px-space-md py-space-sm rounded-lg shadow-sm transition-all active:scale-95"
+                onclick="openAddTaskModal()">
+                <span class="material-symbols-outlined text-base">add_task</span>
+                <span>New Task</span>
+              </button>
+            </div>
+          </div>
+          <!-- 2. ADVANCED FILTER & SEARCH TOOLBAR -->
+          <div
+            class="relative z-10 flex flex-col gap-space-sm bg-surface-container-low p-space-md rounded-xl shadow-sm">
+            <!-- Top Row Filters -->
+            <div class="flex flex-col lg:flex-row items-stretch lg:items-center justify-between gap-space-sm">
+              <!-- Search -->
+              <div class="relative flex-1 min-w-[240px] max-w-lg">
+                <span
+                  class="material-symbols-outlined absolute left-3 top-2.5 text-outline text-lg pointer-events-none">search</span>
+                <input
+                  class="w-full pl-9 pr-8 py-space-xs bg-surface-container-lowest rounded-lg font-body-sm text-body-sm text-on-surface placeholder:text-outline focus:outline-none shadow-sm"
+                  id="taskSearchInput" onkeyup="filterTasks()" placeholder="Filter by title, tag, or description..."
+                  type="text" />
+                <button class="hidden absolute right-2.5 top-2.5 text-outline hover:text-on-surface" id="clearSearchBtn"
+                  onclick="clearSearch()">
+                  <span class="material-symbols-outlined text-sm">close</span>
+                </button>
+              </div>
+              <!-- Status Filter Pills -->
+              <div class="flex items-center overflow-x-auto pb-1 lg:pb-0 gap-space-xs scrollbar-none"
+                id="statusPillsContainer">
+                <button
+                  class="status-filter-pill active px-space-sm py-1 rounded-full font-label-md text-label-md bg-surface-container-highest text-on-surface font-medium transition-colors shrink-0"
+                  data-status="all" onclick="setStatusFilter('all')">
+                  All <span class="ml-1 opacity-70">24</span>
+                </button>
+                <button
+                  class="status-filter-pill px-space-sm py-1 rounded-full font-label-md text-label-md bg-surface-container-lowest text-on-surface-variant hover:bg-surface-container transition-colors shrink-0"
+                  data-status="pending" onclick="setStatusFilter('pending')">
+                  Pending <span class="ml-1 opacity-70">8</span>
+                </button>
+                <button
+                  class="status-filter-pill px-space-sm py-1 rounded-full font-label-md text-label-md bg-surface-container-lowest text-on-surface-variant hover:bg-surface-container transition-colors shrink-0"
+                  data-status="in-progress" onclick="setStatusFilter('in-progress')">
+                  In Progress <span class="ml-1 opacity-70">9</span>
+                </button>
+                <button
+                  class="status-filter-pill px-space-sm py-1 rounded-full font-label-md text-label-md bg-surface-container-lowest text-on-surface-variant hover:bg-surface-container transition-colors shrink-0"
+                  data-status="completed" onclick="setStatusFilter('completed')">
+                  Completed <span class="ml-1 opacity-70">7</span>
+                </button>
+                <button
+                  class="status-filter-pill px-space-sm py-1 rounded-full font-label-md text-label-md bg-error-container text-on-error-container hover:bg-error-container/80 transition-colors shrink-0 flex items-center gap-1"
+                  data-status="overdue" onclick="setStatusFilter('overdue')">
+                  <span class="material-symbols-outlined text-xs">warning</span>
+                  Overdue <span class="ml-0.5 font-bold">2</span>
+                </button>
+              </div>
+            </div>
+            <!-- Second Filter Row: Categories, Priority & Sorting -->
+            <div class="flex flex-col sm:flex-row sm:items-center justify-between gap-space-sm pt-space-xs">
+              <div class="flex items-center flex-wrap gap-space-xs">
+                <span class="font-label-sm text-label-sm text-outline mr-1 uppercase">Tag:</span>
+                <button
+                  class="cat-pill active px-space-xs py-0.5 rounded font-label-sm text-label-sm bg-primary-container text-on-primary-container font-medium"
+                  data-cat="all" onclick="setCategoryFilter('all')">All Tags</button>
+                <button
+                  class="cat-pill px-space-xs py-0.5 rounded font-label-sm text-label-sm bg-surface-container-lowest text-on-surface-variant hover:bg-surface-container"
+                  data-cat="Go Backend" onclick="setCategoryFilter('Go Backend')">Go Backend</button>
+                <button
+                  class="cat-pill px-space-xs py-0.5 rounded font-label-sm text-label-sm bg-surface-container-lowest text-on-surface-variant hover:bg-surface-container"
+                  data-cat="Database" onclick="setCategoryFilter('Database')">Database</button>
+                <button
+                  class="cat-pill px-space-xs py-0.5 rounded font-label-sm text-label-sm bg-surface-container-lowest text-on-surface-variant hover:bg-surface-container"
+                  data-cat="Capstone" onclick="setCategoryFilter('Capstone')">Capstone</button>
+                <button
+                  class="cat-pill px-space-xs py-0.5 rounded font-label-sm text-label-sm bg-surface-container-lowest text-on-surface-variant hover:bg-surface-container"
+                  data-cat="Frontend" onclick="setCategoryFilter('Frontend')">Frontend</button>
+                <button
+                  class="cat-pill px-space-xs py-0.5 rounded font-label-sm text-label-sm bg-surface-container-lowest text-on-surface-variant hover:bg-surface-container"
+                  data-cat="Documentation" onclick="setCategoryFilter('Documentation')">Docs</button>
+              </div>
+              <!-- Priority and Sorting controls -->
+              <div class="flex items-center gap-space-sm self-end sm:self-auto">
+                <!-- Priority pill group -->
+                <div class="flex items-center bg-surface-container-lowest rounded-lg p-0.5 shadow-sm text-label-sm">
+                  <span class="text-outline px-1.5 font-label-sm text-label-sm">Pri:</span>
+                  <button
+                    class="pri-pill active px-space-xs py-0.5 rounded font-label-sm text-label-sm bg-surface-container text-on-surface"
+                    data-pri="all" onclick="setPriorityFilter('all')">All</button>
+                  <button
+                    class="pri-pill px-space-xs py-0.5 rounded font-label-sm text-label-sm text-tertiary hover:bg-tertiary-fixed"
+                    data-pri="High" onclick="setPriorityFilter('High')">High</button>
+                  <button
+                    class="pri-pill px-space-xs py-0.5 rounded font-label-sm text-label-sm text-secondary hover:bg-secondary-container"
+                    data-pri="Medium" onclick="setPriorityFilter('Medium')">Med</button>
+                  <button
+                    class="pri-pill px-space-xs py-0.5 rounded font-label-sm text-label-sm text-on-surface-variant hover:bg-surface-container"
+                    data-pri="Low" onclick="setPriorityFilter('Low')">Low</button>
+                </div>
+                <!-- Sorting Selector -->
+                <div class="flex items-center gap-1 bg-surface-container-lowest px-space-sm py-1 rounded-lg shadow-sm">
+                  <span class="material-symbols-outlined text-sm text-outline">sort</span>
+                  <select
+                    class="bg-transparent font-label-sm text-label-sm text-on-surface focus:outline-none cursor-pointer"
+                    id="sortSelect" onchange="sortTasks()">
+                    <option value="due-asc">Due Date (Earliest)</option>
+                    <option value="due-desc">Due Date (Latest)</option>
+                    <option value="priority-desc">Priority (Highest)</option>
+                    <option value="title-asc">Title (A-Z)</option>
+                  </select>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <!-- FLOATING BATCH ACTION BAR (Shown when rows selected) -->
+        <div
+          class="hidden sticky top-16 z-30 mx-gutter mb-space-sm p-space-sm bg-inverse-surface text-inverse-on-surface rounded-xl shadow-md flex items-center justify-between animate-fade-in transition-all"
+          id="batchActionBar">
+          <div class="flex items-center gap-space-md">
+            <span class="material-symbols-outlined text-primary-fixed">check_circle</span>
+            <span class="font-label-md text-label-md font-medium text-inverse-on-surface" id="batchCountText">1 task
+              selected</span>
+            <button class="text-xs text-outline-variant hover:text-inverse-on-surface underline"
+              onclick="clearAllSelections()">Deselect all</button>
+          </div>
+          <div class="flex items-center gap-space-xs">
+            <button
+              class="flex items-center gap-1 bg-primary text-on-primary hover:bg-primary-container hover:text-on-primary-container px-space-sm py-1 rounded font-label-sm text-label-sm transition-colors"
+              onclick="batchMarkCompleted()">
+              <span class="material-symbols-outlined text-xs">done_all</span> Mark Completed
+            </button>
+            <button
+              class="flex items-center gap-1 bg-surface-variant/20 hover:bg-surface-variant/40 text-inverse-on-surface px-space-sm py-1 rounded font-label-sm text-label-sm transition-colors"
+              onclick="batchChangePriority()">
+              <span class="material-symbols-outlined text-xs">low_priority</span> Change Priority
+            </button>
+            <button
+              class="flex items-center gap-1 bg-error/80 hover:bg-error text-on-error px-space-sm py-1 rounded font-label-sm text-label-sm transition-colors"
+              onclick="batchDelete()">
+              <span class="material-symbols-outlined text-xs">delete</span> Delete
+            </button>
+          </div>
+        </div>
+        <!-- 3. COMPREHENSIVE DUAL-VIEW WORKSPACE -->
+        <div class="relative px-gutter pb-space-xl flex-1 flex">
+          <!-- MAIN VIEW AREA (EXPANDS / SQUEEZES WHEN DRAWER IS OPEN) -->
+          <div class="w-full transition-all duration-300" id="viewContainer">
+            <!-- 3A. TABLE VIEW (Default) -->
+            <div class="w-full overflow-hidden rounded-xl bg-surface-container-lowest shadow-sm" id="tableView">
+              <div class="overflow-x-auto">
+                <table class="w-full text-left border-collapse">
+                  <thead>
+                    <tr
+                      class="bg-surface-container-low text-on-surface-variant font-label-sm text-label-sm select-none">
+                      <th class="py-space-sm px-space-md w-12 text-center">
+                        <input class="w-4 h-4 rounded text-primary focus:ring-0 cursor-pointer accent-primary"
+                          id="selectAllCheckbox" onchange="toggleSelectAll(this)" type="checkbox" />
+                      </th>
+                      <th class="py-space-sm px-space-md cursor-pointer hover:text-on-surface"
+                        onclick="sortByColumn('id')">
+                        <div class="flex items-center gap-1">
+                          <span>Task ID &amp; Title</span>
+                          <span class="material-symbols-outlined text-xs text-outline">unfold_more</span>
+                        </div>
+                      </th>
+                      <th class="py-space-sm px-space-md hidden md:table-cell cursor-pointer hover:text-on-surface"
+                        onclick="sortByColumn('category')">
+                        <div class="flex items-center gap-1">
+                          <span>Tag</span>
+                          <span class="material-symbols-outlined text-xs text-outline">unfold_more</span>
+                        </div>
+                      </th>
+                      <th class="py-space-sm px-space-md cursor-pointer hover:text-on-surface"
+                        onclick="sortByColumn('priority')">
+                        <div class="flex items-center gap-1">
+                          <span>Priority</span>
+                          <span class="material-symbols-outlined text-xs text-outline">unfold_more</span>
+                        </div>
+                      </th>
+                      <th class="py-space-sm px-space-md cursor-pointer hover:text-on-surface"
+                        onclick="sortByColumn('status')">
+                        <div class="flex items-center gap-1">
+                          <span>Status</span>
+                          <span class="material-symbols-outlined text-xs text-outline">unfold_more</span>
+                        </div>
+                      </th>
+                      <th class="py-space-sm px-space-md hidden sm:table-cell cursor-pointer hover:text-on-surface"
+                        onclick="sortByColumn('due')">
+                        <div class="flex items-center gap-1">
+                          <span>Due Date</span>
+                          <span class="material-symbols-outlined text-xs text-outline">unfold_more</span>
+                        </div>
+                      </th>
+                      <th class="py-space-sm px-space-md text-right w-24">Actions</th>
+                    </tr>
+                  </thead>
+                  <tbody class="divide-none text-on-surface" id="taskTableBody">
+                    <!-- ROW 1: Gin Middleware (Selected initially or click opens drawer) -->
+                    <tr
+                      class="task-row group bg-surface-container-lowest hover:bg-surface-container-low/70 transition-colors cursor-pointer"
+                      data-cat="Go Backend" data-id="GO-TASK-104" data-pri="High" data-status="in-progress"
+                      onclick="handleRowClick(event, 'GO-TASK-104')">
+                      <td class="py-space-sm px-space-md text-center" onclick="event.stopPropagation()">
+                        <input
+                          class="task-select-chk w-4 h-4 rounded text-primary focus:ring-0 cursor-pointer accent-primary"
+                          onchange="handleTaskCheckbox(this)" type="checkbox" />
+                      </td>
+                      <td class="py-space-sm px-space-md">
+                        <div class="flex flex-col">
+                          <div class="flex items-center gap-space-xs">
+                            <span class="font-label-sm text-label-sm text-primary font-semibold">#GO-TASK-104</span>
+                            <span
+                              class="font-body-md text-body-md font-semibold text-on-surface hover:text-primary transition-colors">Implement
+                              Go Gin/Fiber Middleware for Request Logging and Recovery</span>
+                          </div>
+                          <span class="font-body-sm text-body-sm text-outline truncate max-w-md">Structured JSON
+                            telemetry logging, Zap logger setup, and panic recovery handler for REST
+                            microservices.</span>
+                        </div>
+                      </td>
+                      <td class="py-space-sm px-space-md hidden md:table-cell">
+                        <span
+                          class="px-space-xs py-0.5 rounded font-label-sm text-label-sm bg-secondary-container text-on-secondary-container">Go
+                          Backend</span>
+                      </td>
+                      <td class="py-space-sm px-space-md">
+                        <span
+                          class="px-space-xs py-0.5 rounded-full font-label-sm text-label-sm bg-tertiary-fixed text-on-tertiary-fixed flex items-center gap-1 w-max font-medium">
+                          <span class="w-1.5 h-1.5 rounded-full bg-tertiary"></span> High
+                        </span>
+                      </td>
+                      <td class="py-space-sm px-space-md" onclick="event.stopPropagation()">
+                        <div class="relative inline-block text-left">
+                          <select
+                            class="font-label-sm text-label-sm bg-surface-container text-on-surface px-2 py-1 rounded-md font-medium cursor-pointer focus:outline-none"
+                            onchange="updateRowStatus(this, 'GO-TASK-104')">
+                            <option value="pending">Pending</option>
+                            <option selected="" value="in-progress">In Progress</option>
+                            <option value="completed">Completed</option>
+                            <option value="overdue">Overdue</option>
+                          </select>
+                        </div>
+                      </td>
+                      <td class="py-space-sm px-space-md hidden sm:table-cell">
+                        <div class="flex items-center gap-1 font-body-sm text-body-sm text-on-surface-variant">
+                          <span class="material-symbols-outlined text-sm text-tertiary">event</span>
+                          <span>Oct 26, 2024</span>
+                          <span class="font-label-sm text-label-sm text-tertiary">(2 days left)</span>
+                        </div>
+                      </td>
+                      <td class="py-space-sm px-space-md text-right" onclick="event.stopPropagation()">
+                        <div class="flex items-center justify-end gap-1">
+                          <button
+                            class="p-1 text-outline hover:text-on-surface hover:bg-surface-container rounded transition-colors"
+                            onclick="openEditModal('GO-TASK-104')" title="Quick Edit">
+                            <span class="material-symbols-outlined text-base">edit</span>
+                          </button>
+                          <button
+                            class="p-1 text-outline hover:text-error hover:bg-error-container/40 rounded transition-colors"
+                            onclick="deleteSingleTask('GO-TASK-104')" title="Delete">
+                            <span class="material-symbols-outlined text-base">delete</span>
+                          </button>
+                        </div>
+                      </td>
+                    </tr>
+                    <!-- ROW 2: PostgreSQL Migration -->
+                    <tr
+                      class="task-row group bg-surface-container-lowest hover:bg-surface-container-low/70 transition-colors cursor-pointer"
+                      data-cat="Database" data-id="GO-TASK-101" data-pri="High" data-status="overdue"
+                      onclick="handleRowClick(event, 'GO-TASK-101')">
+                      <td class="py-space-sm px-space-md text-center" onclick="event.stopPropagation()">
+                        <input
+                          class="task-select-chk w-4 h-4 rounded text-primary focus:ring-0 cursor-pointer accent-primary"
+                          onchange="handleTaskCheckbox(this)" type="checkbox" />
+                      </td>
+                      <td class="py-space-sm px-space-md">
+                        <div class="flex flex-col">
+                          <div class="flex items-center gap-space-xs">
+                            <span class="font-label-sm text-label-sm text-primary font-semibold">#GO-TASK-101</span>
+                            <span class="font-body-md text-body-md font-semibold text-on-surface">PostgreSQL GORM Schema
+                              Migration &amp; Indexes</span>
+                          </div>
+                          <span class="font-body-sm text-body-sm text-outline truncate max-w-md">Foreign key
+                            constraints, composite index for (user_id, created_at), and seed migrations.</span>
+                        </div>
+                      </td>
+                      <td class="py-space-sm px-space-md hidden md:table-cell">
+                        <span
+                          class="px-space-xs py-0.5 rounded font-label-sm text-label-sm bg-surface-container-high text-on-surface-variant">Database</span>
+                      </td>
+                      <td class="py-space-sm px-space-md">
+                        <span
+                          class="px-space-xs py-0.5 rounded-full font-label-sm text-label-sm bg-tertiary-fixed text-on-tertiary-fixed flex items-center gap-1 w-max font-medium">
+                          <span class="w-1.5 h-1.5 rounded-full bg-tertiary"></span> High
+                        </span>
+                      </td>
+                      <td class="py-space-sm px-space-md" onclick="event.stopPropagation()">
+                        <select
+                          class="font-label-sm text-label-sm bg-error-container text-on-error-container px-2 py-1 rounded-md font-medium cursor-pointer focus:outline-none"
+                          onchange="updateRowStatus(this, 'GO-TASK-101')">
+                          <option value="pending">Pending</option>
+                          <option value="in-progress">In Progress</option>
+                          <option value="completed">Completed</option>
+                          <option selected="" value="overdue">Overdue</option>
+                        </select>
+                      </td>
+                      <td class="py-space-sm px-space-md hidden sm:table-cell">
+                        <div class="flex items-center gap-1 font-body-sm text-body-sm text-error font-medium">
+                          <span class="material-symbols-outlined text-sm">warning</span>
+                          <span>Oct 22, 2024</span>
+                          <span class="font-label-sm text-label-sm text-error">(-2 days)</span>
+                        </div>
+                      </td>
+                      <td class="py-space-sm px-space-md text-right" onclick="event.stopPropagation()">
+                        <div class="flex items-center justify-end gap-1">
+                          <button
+                            class="p-1 text-outline hover:text-on-surface hover:bg-surface-container rounded transition-colors"
+                            onclick="openEditModal('GO-TASK-101')" title="Quick Edit">
+                            <span class="material-symbols-outlined text-base">edit</span>
+                          </button>
+                          <button
+                            class="p-1 text-outline hover:text-error hover:bg-error-container/40 rounded transition-colors"
+                            onclick="deleteSingleTask('GO-TASK-101')" title="Delete">
+                            <span class="material-symbols-outlined text-base">delete</span>
+                          </button>
+                        </div>
+                      </td>
+                    </tr>
+                    <!-- ROW 3: JWT Auth -->
+                    <tr
+                      class="task-row group bg-surface-container-lowest hover:bg-surface-container-low/70 transition-colors cursor-pointer"
+                      data-cat="Go Backend" data-id="GO-TASK-102" data-pri="High" data-status="completed"
+                      onclick="handleRowClick(event, 'GO-TASK-102')">
+                      <td class="py-space-sm px-space-md text-center" onclick="event.stopPropagation()">
+                        <input
+                          class="task-select-chk w-4 h-4 rounded text-primary focus:ring-0 cursor-pointer accent-primary"
+                          onchange="handleTaskCheckbox(this)" type="checkbox" />
+                      </td>
+                      <td class="py-space-sm px-space-md">
+                        <div class="flex flex-col">
+                          <div class="flex items-center gap-space-xs">
+                            <span class="font-label-sm text-label-sm text-primary font-semibold">#GO-TASK-102</span>
+                            <span class="font-body-md text-body-md line-through text-outline">Implement JWT
+                              Authentication &amp; Refresh Token Rotation</span>
+                          </div>
+                          <span class="font-body-sm text-body-sm text-outline truncate max-w-md">Redis blacklist
+                            integration, claims validation, and bcrypt password hashing.</span>
+                        </div>
+                      </td>
+                      <td class="py-space-sm px-space-md hidden md:table-cell">
+                        <span
+                          class="px-space-xs py-0.5 rounded font-label-sm text-label-sm bg-secondary-container text-on-secondary-container">Go
+                          Backend</span>
+                      </td>
+                      <td class="py-space-sm px-space-md">
+                        <span
+                          class="px-space-xs py-0.5 rounded-full font-label-sm text-label-sm bg-tertiary-fixed text-on-tertiary-fixed flex items-center gap-1 w-max font-medium">
+                          <span class="w-1.5 h-1.5 rounded-full bg-tertiary"></span> High
+                        </span>
+                      </td>
+                      <td class="py-space-sm px-space-md" onclick="event.stopPropagation()">
+                        <select
+                          class="font-label-sm text-label-sm bg-primary-fixed text-on-primary-fixed-variant px-2 py-1 rounded-md font-medium cursor-pointer focus:outline-none"
+                          onchange="updateRowStatus(this, 'GO-TASK-102')">
+                          <option value="pending">Pending</option>
+                          <option value="in-progress">In Progress</option>
+                          <option selected="" value="completed">Completed</option>
+                          <option value="overdue">Overdue</option>
+                        </select>
+                      </td>
+                      <td class="py-space-sm px-space-md hidden sm:table-cell">
+                        <div class="flex items-center gap-1 font-body-sm text-body-sm text-outline">
+                          <span class="material-symbols-outlined text-sm">check_circle</span>
+                          <span>Oct 20, 2024</span>
+                        </div>
+                      </td>
+                      <td class="py-space-sm px-space-md text-right" onclick="event.stopPropagation()">
+                        <div class="flex items-center justify-end gap-1">
+                          <button
+                            class="p-1 text-outline hover:text-on-surface hover:bg-surface-container rounded transition-colors"
+                            onclick="openEditModal('GO-TASK-102')" title="Quick Edit">
+                            <span class="material-symbols-outlined text-base">edit</span>
+                          </button>
+                          <button
+                            class="p-1 text-outline hover:text-error hover:bg-error-container/40 rounded transition-colors"
+                            onclick="deleteSingleTask('GO-TASK-102')" title="Delete">
+                            <span class="material-symbols-outlined text-base">delete</span>
+                          </button>
+                        </div>
+                      </td>
+                    </tr>
+                    <!-- ROW 4: Capstone SRS -->
+                    <tr
+                      class="task-row group bg-surface-container-lowest hover:bg-surface-container-low/70 transition-colors cursor-pointer"
+                      data-cat="Capstone" data-id="GO-TASK-103" data-pri="Medium" data-status="pending"
+                      onclick="handleRowClick(event, 'GO-TASK-103')">
+                      <td class="py-space-sm px-space-md text-center" onclick="event.stopPropagation()">
+                        <input
+                          class="task-select-chk w-4 h-4 rounded text-primary focus:ring-0 cursor-pointer accent-primary"
+                          onchange="handleTaskCheckbox(this)" type="checkbox" />
+                      </td>
+                      <td class="py-space-sm px-space-md">
+                        <div class="flex flex-col">
+                          <div class="flex items-center gap-space-xs">
+                            <span class="font-label-sm text-label-sm text-primary font-semibold">#GO-TASK-103</span>
+                            <span class="font-body-md text-body-md font-semibold text-on-surface">Review Final Capstone
+                              Architecture Blueprint with Mentor</span>
+                          </div>
+                          <span class="font-body-sm text-body-sm text-outline truncate max-w-md">Compile microservices
+                            architecture diagrams and sequence graphs for Dr. Rao.</span>
+                        </div>
+                      </td>
+                      <td class="py-space-sm px-space-md hidden md:table-cell">
+                        <span
+                          class="px-space-xs py-0.5 rounded font-label-sm text-label-sm bg-surface-container text-on-surface">Capstone</span>
+                      </td>
+                      <td class="py-space-sm px-space-md">
+                        <span
+                          class="px-space-xs py-0.5 rounded-full font-label-sm text-label-sm bg-secondary-fixed text-on-secondary-fixed-variant flex items-center gap-1 w-max font-medium">
+                          <span class="w-1.5 h-1.5 rounded-full bg-secondary"></span> Med
+                        </span>
+                      </td>
+                      <td class="py-space-sm px-space-md" onclick="event.stopPropagation()">
+                        <select
+                          class="font-label-sm text-label-sm bg-surface-container text-on-surface-variant px-2 py-1 rounded-md font-medium cursor-pointer focus:outline-none"
+                          onchange="updateRowStatus(this, 'GO-TASK-103')">
+                          <option selected="" value="pending">Pending</option>
+                          <option value="in-progress">In Progress</option>
+                          <option value="completed">Completed</option>
+                          <option value="overdue">Overdue</option>
+                        </select>
+                      </td>
+                      <td class="py-space-sm px-space-md hidden sm:table-cell">
+                        <div class="flex items-center gap-1 font-body-sm text-body-sm text-on-surface-variant">
+                          <span class="material-symbols-outlined text-sm">schedule</span>
+                          <span>Oct 28, 2024</span>
+                        </div>
+                      </td>
+                      <td class="py-space-sm px-space-md text-right" onclick="event.stopPropagation()">
+                        <div class="flex items-center justify-end gap-1">
+                          <button
+                            class="p-1 text-outline hover:text-on-surface hover:bg-surface-container rounded transition-colors"
+                            onclick="openEditModal('GO-TASK-103')" title="Quick Edit">
+                            <span class="material-symbols-outlined text-base">edit</span>
+                          </button>
+                          <button
+                            class="p-1 text-outline hover:text-error hover:bg-error-container/40 rounded transition-colors"
+                            onclick="deleteSingleTask('GO-TASK-103')" title="Delete">
+                            <span class="material-symbols-outlined text-base">delete</span>
+                          </button>
+                        </div>
+                      </td>
+                    </tr>
+                    <!-- ROW 5: Docker Containerization -->
+                    <tr
+                      class="task-row group bg-surface-container-lowest hover:bg-surface-container-low/70 transition-colors cursor-pointer"
+                      data-cat="Capstone" data-id="GO-TASK-105" data-pri="Medium" data-status="in-progress"
+                      onclick="handleRowClick(event, 'GO-TASK-105')">
+                      <td class="py-space-sm px-space-md text-center" onclick="event.stopPropagation()">
+                        <input
+                          class="task-select-chk w-4 h-4 rounded text-primary focus:ring-0 cursor-pointer accent-primary"
+                          onchange="handleTaskCheckbox(this)" type="checkbox" />
+                      </td>
+                      <td class="py-space-sm px-space-md">
+                        <div class="flex flex-col">
+                          <div class="flex items-center gap-space-xs">
+                            <span class="font-label-sm text-label-sm text-primary font-semibold">#GO-TASK-105</span>
+                            <span class="font-body-md text-body-md font-semibold text-on-surface">Multi-Stage Dockerfile
+                              &amp; Compose Orchestration</span>
+                          </div>
+                          <span class="font-body-sm text-body-sm text-outline truncate max-w-md">Scratch binary
+                            packaging for minimal footprint (under 18MB final image).</span>
+                        </div>
+                      </td>
+                      <td class="py-space-sm px-space-md hidden md:table-cell">
+                        <span
+                          class="px-space-xs py-0.5 rounded font-label-sm text-label-sm bg-surface-container text-on-surface">Capstone</span>
+                      </td>
+                      <td class="py-space-sm px-space-md">
+                        <span
+                          class="px-space-xs py-0.5 rounded-full font-label-sm text-label-sm bg-secondary-fixed text-on-secondary-fixed-variant flex items-center gap-1 w-max font-medium">
+                          <span class="w-1.5 h-1.5 rounded-full bg-secondary"></span> Med
+                        </span>
+                      </td>
+                      <td class="py-space-sm px-space-md" onclick="event.stopPropagation()">
+                        <select
+                          class="font-label-sm text-label-sm bg-surface-container text-on-surface px-2 py-1 rounded-md font-medium cursor-pointer focus:outline-none"
+                          onchange="updateRowStatus(this, 'GO-TASK-105')">
+                          <option value="pending">Pending</option>
+                          <option selected="" value="in-progress">In Progress</option>
+                          <option value="completed">Completed</option>
+                          <option value="overdue">Overdue</option>
+                        </select>
+                      </td>
+                      <td class="py-space-sm px-space-md hidden sm:table-cell">
+                        <div class="flex items-center gap-1 font-body-sm text-body-sm text-on-surface-variant">
+                          <span class="material-symbols-outlined text-sm">schedule</span>
+                          <span>Oct 29, 2024</span>
+                        </div>
+                      </td>
+                      <td class="py-space-sm px-space-md text-right" onclick="event.stopPropagation()">
+                        <div class="flex items-center justify-end gap-1">
+                          <button
+                            class="p-1 text-outline hover:text-on-surface hover:bg-surface-container rounded transition-colors"
+                            onclick="openEditModal('GO-TASK-105')" title="Quick Edit">
+                            <span class="material-symbols-outlined text-base">edit</span>
+                          </button>
+                          <button
+                            class="p-1 text-outline hover:text-error hover:bg-error-container/40 rounded transition-colors"
+                            onclick="deleteSingleTask('GO-TASK-105')" title="Delete">
+                            <span class="material-symbols-outlined text-base">delete</span>
+                          </button>
+                        </div>
+                      </td>
+                    </tr>
+                    <!-- ROW 6: Swagger Docs -->
+                    <tr
+                      class="task-row group bg-surface-container-lowest hover:bg-surface-container-low/70 transition-colors cursor-pointer"
+                      data-cat="Documentation" data-id="GO-TASK-106" data-pri="Low" data-status="pending"
+                      onclick="handleRowClick(event, 'GO-TASK-106')">
+                      <td class="py-space-sm px-space-md text-center" onclick="event.stopPropagation()">
+                        <input
+                          class="task-select-chk w-4 h-4 rounded text-primary focus:ring-0 cursor-pointer accent-primary"
+                          onchange="handleTaskCheckbox(this)" type="checkbox" />
+                      </td>
+                      <td class="py-space-sm px-space-md">
+                        <div class="flex flex-col">
+                          <div class="flex items-center gap-space-xs">
+                            <span class="font-label-sm text-label-sm text-primary font-semibold">#GO-TASK-106</span>
+                            <span class="font-body-md text-body-md font-semibold text-on-surface">Generate Swaggo /
+                              OpenAPI 3.0 Documentation</span>
+                          </div>
+                          <span class="font-body-sm text-body-sm text-outline truncate max-w-md">Annotate handlers for
+                            `/tasks`, `/auth`, and auto-generate client SDK specs.</span>
+                        </div>
+                      </td>
+                      <td class="py-space-sm px-space-md hidden md:table-cell">
+                        <span
+                          class="px-space-xs py-0.5 rounded font-label-sm text-label-sm bg-surface-container-low text-on-surface-variant">Docs</span>
+                      </td>
+                      <td class="py-space-sm px-space-md">
+                        <span
+                          class="px-space-xs py-0.5 rounded-full font-label-sm text-label-sm bg-surface-container text-on-surface-variant flex items-center gap-1 w-max font-medium">
+                          <span class="w-1.5 h-1.5 rounded-full bg-outline"></span> Low
+                        </span>
+                      </td>
+                      <td class="py-space-sm px-space-md" onclick="event.stopPropagation()">
+                        <select
+                          class="font-label-sm text-label-sm bg-surface-container text-on-surface-variant px-2 py-1 rounded-md font-medium cursor-pointer focus:outline-none"
+                          onchange="updateRowStatus(this, 'GO-TASK-106')">
+                          <option selected="" value="pending">Pending</option>
+                          <option value="in-progress">In Progress</option>
+                          <option value="completed">Completed</option>
+                          <option value="overdue">Overdue</option>
+                        </select>
+                      </td>
+                      <td class="py-space-sm px-space-md hidden sm:table-cell">
+                        <div class="flex items-center gap-1 font-body-sm text-body-sm text-on-surface-variant">
+                          <span class="material-symbols-outlined text-sm">schedule</span>
+                          <span>Nov 02, 2024</span>
+                        </div>
+                      </td>
+                      <td class="py-space-sm px-space-md text-right" onclick="event.stopPropagation()">
+                        <div class="flex items-center justify-end gap-1">
+                          <button
+                            class="p-1 text-outline hover:text-on-surface hover:bg-surface-container rounded transition-colors"
+                            onclick="openEditModal('GO-TASK-106')" title="Quick Edit">
+                            <span class="material-symbols-outlined text-base">edit</span>
+                          </button>
+                          <button
+                            class="p-1 text-outline hover:text-error hover:bg-error-container/40 rounded transition-colors"
+                            onclick="deleteSingleTask('GO-TASK-106')" title="Delete">
+                            <span class="material-symbols-outlined text-base">delete</span>
+                          </button>
+                        </div>
+                      </td>
+                    </tr>
+                    <!-- ROW 7: WebSocket Task Sync -->
+                    <tr
+                      class="task-row group bg-surface-container-lowest hover:bg-surface-container-low/70 transition-colors cursor-pointer"
+                      data-cat="Frontend" data-id="GO-TASK-107" data-pri="High" data-status="in-progress"
+                      onclick="handleRowClick(event, 'GO-TASK-107')">
+                      <td class="py-space-sm px-space-md text-center" onclick="event.stopPropagation()">
+                        <input
+                          class="task-select-chk w-4 h-4 rounded text-primary focus:ring-0 cursor-pointer accent-primary"
+                          onchange="handleTaskCheckbox(this)" type="checkbox" />
+                      </td>
+                      <td class="py-space-sm px-space-md">
+                        <div class="flex flex-col">
+                          <div class="flex items-center gap-space-xs">
+                            <span class="font-label-sm text-label-sm text-primary font-semibold">#GO-TASK-107</span>
+                            <span class="font-body-md text-body-md font-semibold text-on-surface">Client WebSocket
+                              Reconnection &amp; Event Bus Sync</span>
+                          </div>
+                          <span class="font-body-sm text-body-sm text-outline truncate max-w-md">Handle heartbeats,
+                            backoff retry logic, and concurrent broadcast channel listeners.</span>
+                        </div>
+                      </td>
+                      <td class="py-space-sm px-space-md hidden md:table-cell">
+                        <span
+                          class="px-space-xs py-0.5 rounded font-label-sm text-label-sm bg-surface-container text-on-surface">Frontend</span>
+                      </td>
+                      <td class="py-space-sm px-space-md">
+                        <span
+                          class="px-space-xs py-0.5 rounded-full font-label-sm text-label-sm bg-tertiary-fixed text-on-tertiary-fixed flex items-center gap-1 w-max font-medium">
+                          <span class="w-1.5 h-1.5 rounded-full bg-tertiary"></span> High
+                        </span>
+                      </td>
+                      <td class="py-space-sm px-space-md" onclick="event.stopPropagation()">
+                        <select
+                          class="font-label-sm text-label-sm bg-surface-container text-on-surface px-2 py-1 rounded-md font-medium cursor-pointer focus:outline-none"
+                          onchange="updateRowStatus(this, 'GO-TASK-107')">
+                          <option value="pending">Pending</option>
+                          <option selected="" value="in-progress">In Progress</option>
+                          <option value="completed">Completed</option>
+                          <option value="overdue">Overdue</option>
+                        </select>
+                      </td>
+                      <td class="py-space-sm px-space-md hidden sm:table-cell">
+                        <div class="flex items-center gap-1 font-body-sm text-body-sm text-on-surface-variant">
+                          <span class="material-symbols-outlined text-sm">schedule</span>
+                          <span>Oct 27, 2024</span>
+                        </div>
+                      </td>
+                      <td class="py-space-sm px-space-md text-right" onclick="event.stopPropagation()">
+                        <div class="flex items-center justify-end gap-1">
+                          <button
+                            class="p-1 text-outline hover:text-on-surface hover:bg-surface-container rounded transition-colors"
+                            onclick="openEditModal('GO-TASK-107')" title="Quick Edit">
+                            <span class="material-symbols-outlined text-base">edit</span>
+                          </button>
+                          <button
+                            class="p-1 text-outline hover:text-error hover:bg-error-container/40 rounded transition-colors"
+                            onclick="deleteSingleTask('GO-TASK-107')" title="Delete">
+                            <span class="material-symbols-outlined text-base">delete</span>
+                          </button>
+                        </div>
+                      </td>
+                    </tr>
+                    <!-- ROW 8: Redis Cache Layer -->
+                    <tr
+                      class="task-row group bg-surface-container-lowest hover:bg-surface-container-low/70 transition-colors cursor-pointer"
+                      data-cat="Database" data-id="GO-TASK-108" data-pri="Medium" data-status="overdue"
+                      onclick="handleRowClick(event, 'GO-TASK-108')">
+                      <td class="py-space-sm px-space-md text-center" onclick="event.stopPropagation()">
+                        <input
+                          class="task-select-chk w-4 h-4 rounded text-primary focus:ring-0 cursor-pointer accent-primary"
+                          onchange="handleTaskCheckbox(this)" type="checkbox" />
+                      </td>
+                      <td class="py-space-sm px-space-md">
+                        <div class="flex flex-col">
+                          <div class="flex items-center gap-space-xs">
+                            <span class="font-label-sm text-label-sm text-primary font-semibold">#GO-TASK-108</span>
+                            <span class="font-body-md text-body-md font-semibold text-on-surface">Redis Cache
+                              Invalidation &amp; Write-Through Middleware</span>
+                          </div>
+                          <span class="font-body-sm text-body-sm text-outline truncate max-w-md">TTL strategy for query
+                            cache to decrease PostgreSQL read latency under 12ms.</span>
+                        </div>
+                      </td>
+                      <td class="py-space-sm px-space-md hidden md:table-cell">
+                        <span
+                          class="px-space-xs py-0.5 rounded font-label-sm text-label-sm bg-surface-container-high text-on-surface-variant">Database</span>
+                      </td>
+                      <td class="py-space-sm px-space-md">
+                        <span
+                          class="px-space-xs py-0.5 rounded-full font-label-sm text-label-sm bg-secondary-fixed text-on-secondary-fixed-variant flex items-center gap-1 w-max font-medium">
+                          <span class="w-1.5 h-1.5 rounded-full bg-secondary"></span> Med
+                        </span>
+                      </td>
+                      <td class="py-space-sm px-space-md" onclick="event.stopPropagation()">
+                        <select
+                          class="font-label-sm text-label-sm bg-error-container text-on-error-container px-2 py-1 rounded-md font-medium cursor-pointer focus:outline-none"
+                          onchange="updateRowStatus(this, 'GO-TASK-108')">
+                          <option value="pending">Pending</option>
+                          <option value="in-progress">In Progress</option>
+                          <option value="completed">Completed</option>
+                          <option selected="" value="overdue">Overdue</option>
+                        </select>
+                      </td>
+                      <td class="py-space-sm px-space-md hidden sm:table-cell">
+                        <div class="flex items-center gap-1 font-body-sm text-body-sm text-error font-medium">
+                          <span class="material-symbols-outlined text-sm">warning</span>
+                          <span>Oct 23, 2024</span>
+                          <span class="font-label-sm text-label-sm text-error">(-1 day)</span>
+                        </div>
+                      </td>
+                      <td class="py-space-sm px-space-md text-right" onclick="event.stopPropagation()">
+                        <div class="flex items-center justify-end gap-1">
+                          <button
+                            class="p-1 text-outline hover:text-on-surface hover:bg-surface-container rounded transition-colors"
+                            onclick="openEditModal('GO-TASK-108')" title="Quick Edit">
+                            <span class="material-symbols-outlined text-base">edit</span>
+                          </button>
+                          <button
+                            class="p-1 text-outline hover:text-error hover:bg-error-container/40 rounded transition-colors"
+                            onclick="deleteSingleTask('GO-TASK-108')" title="Delete">
+                            <span class="material-symbols-outlined text-base">delete</span>
+                          </button>
+                        </div>
+                      </td>
+                    </tr>
+                  </tbody>
+                </table>
+              </div>
+              <!-- Pagination & Summary Footer -->
+              <div
+                class="flex items-center justify-between px-space-md py-space-sm bg-surface-container-low font-body-sm text-body-sm text-on-surface-variant">
+                <div class="flex items-center gap-space-sm">
+                  <span>Rows per page:</span>
+                  <select
+                    class="bg-surface-container-lowest px-2 py-1 rounded text-on-surface font-label-sm text-label-sm focus:outline-none">
+                    <option>8</option>
+                    <option>24</option>
+                    <option>50</option>
+                  </select>
+                  <span class="hidden sm:inline">1 - 8 of 24 tasks</span>
+                </div>
+                <div class="flex items-center gap-1">
+                  <button
+                    class="p-1 rounded text-outline hover:bg-surface-container hover:text-on-surface disabled:opacity-40"
+                    disabled="">
+                    <span class="material-symbols-outlined text-base">chevron_left</span>
+                  </button>
+                  <button
+                    class="px-space-sm py-0.5 rounded font-label-sm text-label-sm bg-primary text-on-primary">1</button>
+                  <button
+                    class="px-space-sm py-0.5 rounded font-label-sm text-label-sm text-on-surface hover:bg-surface-container">2</button>
+                  <button
+                    class="px-space-sm py-0.5 rounded font-label-sm text-label-sm text-on-surface hover:bg-surface-container">3</button>
+                  <button class="p-1 rounded text-on-surface hover:bg-surface-container">
+                    <span class="material-symbols-outlined text-base">chevron_right</span>
+                  </button>
+                </div>
+              </div>
+            </div>
+            <!-- 3B. KANBAN BOARD VIEW (Hidden by default, switched via JS) -->
+            <div class="hidden grid grid-cols-1 md:grid-cols-4 gap-space-md w-full" id="kanbanView">
+              <!-- Col 1: Pending -->
+              <div class="flex flex-col gap-space-sm bg-surface-container-low p-space-sm rounded-xl">
+                <div class="flex items-center justify-between pb-space-xs">
+                  <div class="flex items-center gap-2">
+                    <span class="w-2.5 h-2.5 rounded-full bg-outline"></span>
+                    <span class="font-headline-sm text-headline-sm text-on-surface">Pending</span>
+                  </div>
+                  <span
+                    class="font-label-sm text-label-sm bg-surface-container px-2 py-0.5 rounded-full font-medium">8</span>
+                </div>
+                <div class="flex flex-col gap-space-sm min-h-[300px]">
+                  <div
+                    class="p-space-sm bg-surface-container-lowest rounded-lg shadow-sm hover:shadow-md transition-shadow cursor-pointer flex flex-col gap-2"
+                    onclick="openTaskDetail('GO-TASK-103')">
+                    <div class="flex items-center justify-between">
+                      <span class="font-label-sm text-label-sm text-primary font-medium">#GO-TASK-103</span>
+                      <span
+                        class="font-label-sm text-label-sm bg-secondary-fixed text-on-secondary-fixed-variant px-1.5 py-0.5 rounded">Med</span>
+                    </div>
+                    <p class="font-body-md text-body-md font-medium text-on-surface">Review Final Capstone Architecture
+                      Blueprint</p>
+                    <div class="flex items-center justify-between font-label-sm text-label-sm text-outline pt-1">
+                      <span>Capstone</span>
+                      <span>Oct 28</span>
+                    </div>
+                  </div>
+                  <div
+                    class="p-space-sm bg-surface-container-lowest rounded-lg shadow-sm hover:shadow-md transition-shadow cursor-pointer flex flex-col gap-2"
+                    onclick="openTaskDetail('GO-TASK-106')">
+                    <div class="flex items-center justify-between">
+                      <span class="font-label-sm text-label-sm text-primary font-medium">#GO-TASK-106</span>
+                      <span
+                        class="font-label-sm text-label-sm bg-surface-container text-on-surface-variant px-1.5 py-0.5 rounded">Low</span>
+                    </div>
+                    <p class="font-body-md text-body-md font-medium text-on-surface">Generate Swaggo OpenAPI 3.0
+                      Documentation</p>
+                    <div class="flex items-center justify-between font-label-sm text-label-sm text-outline pt-1">
+                      <span>Docs</span>
+                      <span>Nov 02</span>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <!-- Col 2: In Progress -->
+              <div class="flex flex-col gap-space-sm bg-surface-container-low p-space-sm rounded-xl">
+                <div class="flex items-center justify-between pb-space-xs">
+                  <div class="flex items-center gap-2">
+                    <span class="w-2.5 h-2.5 rounded-full bg-secondary"></span>
+                    <span class="font-headline-sm text-headline-sm text-on-surface">In Progress</span>
+                  </div>
+                  <span
+                    class="font-label-sm text-label-sm bg-surface-container px-2 py-0.5 rounded-full font-medium">9</span>
+                </div>
+                <div class="flex flex-col gap-space-sm min-h-[300px]">
+                  <div
+                    class="p-space-sm bg-surface-container-lowest rounded-lg shadow-sm hover:shadow-md transition-shadow cursor-pointer flex flex-col gap-2 border-l-4 border-l-primary"
+                    onclick="openTaskDetail('GO-TASK-104')">
+                    <div class="flex items-center justify-between">
+                      <span class="font-label-sm text-label-sm text-primary font-medium">#GO-TASK-104</span>
+                      <span
+                        class="font-label-sm text-label-sm bg-tertiary-fixed text-on-tertiary-fixed px-1.5 py-0.5 rounded">High</span>
+                    </div>
+                    <p class="font-body-md text-body-md font-medium text-on-surface">Implement Gin/Fiber Middleware
+                      Logging &amp; Recovery</p>
+                    <div class="w-full bg-surface-container rounded-full h-1.5">
+                      <div class="bg-primary h-1.5 rounded-full w-3/4"></div>
+                    </div>
+                    <div class="flex items-center justify-between font-label-sm text-label-sm text-outline pt-1">
+                      <span>Go Backend</span>
+                      <span class="text-tertiary font-medium">Oct 26</span>
+                    </div>
+                  </div>
+                  <div
+                    class="p-space-sm bg-surface-container-lowest rounded-lg shadow-sm hover:shadow-md transition-shadow cursor-pointer flex flex-col gap-2"
+                    onclick="openTaskDetail('GO-TASK-105')">
+                    <div class="flex items-center justify-between">
+                      <span class="font-label-sm text-label-sm text-primary font-medium">#GO-TASK-105</span>
+                      <span
+                        class="font-label-sm text-label-sm bg-secondary-fixed text-on-secondary-fixed-variant px-1.5 py-0.5 rounded">Med</span>
+                    </div>
+                    <p class="font-body-md text-body-md font-medium text-on-surface">Multi-Stage Dockerfile &amp;
+                      Compose Orchestration</p>
+                    <div class="flex items-center justify-between font-label-sm text-label-sm text-outline pt-1">
+                      <span>Capstone</span>
+                      <span>Oct 29</span>
+                    </div>
+                  </div>
+                  <div
+                    class="p-space-sm bg-surface-container-lowest rounded-lg shadow-sm hover:shadow-md transition-shadow cursor-pointer flex flex-col gap-2"
+                    onclick="openTaskDetail('GO-TASK-107')">
+                    <div class="flex items-center justify-between">
+                      <span class="font-label-sm text-label-sm text-primary font-medium">#GO-TASK-107</span>
+                      <span
+                        class="font-label-sm text-label-sm bg-tertiary-fixed text-on-tertiary-fixed px-1.5 py-0.5 rounded">High</span>
+                    </div>
+                    <p class="font-body-md text-body-md font-medium text-on-surface">WebSocket Reconnection &amp; Event
+                      Bus Sync</p>
+                    <div class="flex items-center justify-between font-label-sm text-label-sm text-outline pt-1">
+                      <span>Frontend</span>
+                      <span>Oct 27</span>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <!-- Col 3: Overdue -->
+              <div class="flex flex-col gap-space-sm bg-error-container/20 p-space-sm rounded-xl">
+                <div class="flex items-center justify-between pb-space-xs">
+                  <div class="flex items-center gap-2">
+                    <span class="w-2.5 h-2.5 rounded-full bg-error"></span>
+                    <span class="font-headline-sm text-headline-sm text-on-surface">Overdue</span>
+                  </div>
+                  <span
+                    class="font-label-sm text-label-sm bg-error-container text-on-error-container px-2 py-0.5 rounded-full font-bold">2</span>
+                </div>
+                <div class="flex flex-col gap-space-sm min-h-[300px]">
+                  <div
+                    class="p-space-sm bg-surface-container-lowest rounded-lg shadow-sm hover:shadow-md transition-shadow cursor-pointer flex flex-col gap-2"
+                    onclick="openTaskDetail('GO-TASK-101')">
+                    <div class="flex items-center justify-between">
+                      <span class="font-label-sm text-label-sm text-error font-medium">#GO-TASK-101</span>
+                      <span
+                        class="font-label-sm text-label-sm bg-tertiary-fixed text-on-tertiary-fixed px-1.5 py-0.5 rounded">High</span>
+                    </div>
+                    <p class="font-body-md text-body-md font-medium text-on-surface">PostgreSQL GORM Schema Migration
+                      &amp; Indexes</p>
+                    <div class="flex items-center gap-1 font-label-sm text-label-sm text-error font-medium">
+                      <span class="material-symbols-outlined text-xs">warning</span>
+                      <span>Due Oct 22 (Overdue)</span>
+                    </div>
+                  </div>
+                  <div
+                    class="p-space-sm bg-surface-container-lowest rounded-lg shadow-sm hover:shadow-md transition-shadow cursor-pointer flex flex-col gap-2"
+                    onclick="openTaskDetail('GO-TASK-108')">
+                    <div class="flex items-center justify-between">
+                      <span class="font-label-sm text-label-sm text-error font-medium">#GO-TASK-108</span>
+                      <span
+                        class="font-label-sm text-label-sm bg-secondary-fixed text-on-secondary-fixed-variant px-1.5 py-0.5 rounded">Med</span>
+                    </div>
+                    <p class="font-body-md text-body-md font-medium text-on-surface">Redis Cache Invalidation &amp;
+                      Write-Through</p>
+                    <div class="flex items-center gap-1 font-label-sm text-label-sm text-error font-medium">
+                      <span class="material-symbols-outlined text-xs">warning</span>
+                      <span>Due Oct 23 (Overdue)</span>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <!-- Col 4: Completed -->
+              <div class="flex flex-col gap-space-sm bg-surface-container-low p-space-sm rounded-xl">
+                <div class="flex items-center justify-between pb-space-xs">
+                  <div class="flex items-center gap-2">
+                    <span class="w-2.5 h-2.5 rounded-full bg-primary"></span>
+                    <span class="font-headline-sm text-headline-sm text-on-surface">Completed</span>
+                  </div>
+                  <span
+                    class="font-label-sm text-label-sm bg-surface-container px-2 py-0.5 rounded-full font-medium">7</span>
+                </div>
+                <div class="flex flex-col gap-space-sm min-h-[300px]">
+                  <div
+                    class="p-space-sm bg-surface-container-lowest rounded-lg shadow-sm hover:shadow-md transition-shadow cursor-pointer flex flex-col gap-2 opacity-80"
+                    onclick="openTaskDetail('GO-TASK-102')">
+                    <div class="flex items-center justify-between">
+                      <span class="font-label-sm text-label-sm text-outline font-medium">#GO-TASK-102</span>
+                      <span class="material-symbols-outlined text-sm text-primary">check_circle</span>
+                    </div>
+                    <p class="font-body-md text-body-md font-medium text-outline line-through">Implement JWT
+                      Authentication &amp; Refresh Token Rotation</p>
+                    <div class="flex items-center justify-between font-label-sm text-label-sm text-outline pt-1">
+                      <span>Go Backend</span>
+                      <span>Completed Oct 20</span>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <!-- 4. TASK DETAIL EXPANDED SLIDING DRAWER -->
+          <div
+            class="hidden lg:flex flex-col fixed top-16 right-0 w-96 h-[calc(100vh-4rem)] bg-surface-container-lowest shadow-xl z-40 overflow-y-auto transform transition-transform duration-300 translate-x-full"
+            id="taskDrawer">
+            <!-- Drawer Header -->
+            <div
+              class="flex items-center justify-between p-space-md bg-surface-container-low sticky top-0 z-10 shadow-sm">
+              <div class="flex items-center gap-space-xs">
+                <span class="font-label-md text-label-md font-semibold text-primary"
+                  id="drawerTaskId">#GO-TASK-104</span>
+                <span
+                  class="font-label-sm text-label-sm px-2 py-0.5 rounded-full bg-secondary-container text-on-secondary-container">Go
+                  Backend</span>
+              </div>
+              <div class="flex items-center gap-1">
+                <button class="p-1 rounded text-outline hover:text-on-surface hover:bg-surface-container"
+                  onclick="openEditModal('GO-TASK-104')" title="Edit Task">
+                  <span class="material-symbols-outlined text-lg">edit</span>
+                </button>
+                <button class="p-1 rounded text-outline hover:text-on-surface hover:bg-surface-container"
+                  onclick="closeTaskDetail()" title="Close Drawer">
+                  <span class="material-symbols-outlined text-lg">close</span>
+                </button>
+              </div>
+            </div>
+            <!-- Drawer Content -->
+            <div class="p-space-md flex flex-col gap-space-lg">
+              <!-- Title & Status Selector -->
+              <div class="flex flex-col gap-space-sm">
+                <h2 class="font-headline-md text-headline-md text-on-surface" id="drawerTaskTitle">Implement Go
+                  Gin/Fiber Middleware for Request Logging and Recovery</h2>
+                <div class="grid grid-cols-2 gap-space-sm bg-surface-container-low p-space-sm rounded-lg">
+                  <div class="flex flex-col">
+                    <span class="font-label-sm text-label-sm text-outline">Status</span>
+                    <select
+                      class="bg-surface-container-lowest font-label-md text-label-md text-on-surface mt-1 px-2 py-1 rounded shadow-sm focus:outline-none"
+                      id="drawerStatusSelect">
+                      <option value="pending">Pending</option>
+                      <option selected="" value="in-progress">In Progress</option>
+                      <option value="completed">Completed</option>
+                      <option value="overdue">Overdue</option>
+                    </select>
+                  </div>
+                  <div class="flex flex-col">
+                    <span class="font-label-sm text-label-sm text-outline">Priority</span>
+                    <span
+                      class="font-label-md text-label-md text-on-tertiary-fixed bg-tertiary-fixed mt-1 px-2 py-1 rounded flex items-center gap-1 justify-center font-medium">
+                      <span class="w-1.5 h-1.5 rounded-full bg-tertiary"></span> High
+                    </span>
+                  </div>
+                </div>
+              </div>
+              <!-- Meta Attributes Grid -->
+              <div class="flex flex-col gap-space-xs font-body-sm text-body-sm">
+                <div class="flex justify-between py-1 border-b border-surface-container">
+                  <span class="text-outline">Assignee</span>
+                  <div class="flex items-center gap-1 text-on-surface font-medium">
+                    <img class="w-4 h-4 rounded-full object-cover"
+                      data-alt="Alex Rivera headshot in modern office with soft daylight and warm palette"
+                      src="https://lh3.googleusercontent.com/aida-public/AB6AXuCKh-cdyEjIFEjW6nyGDq47PvJUSyeYyNlHZF46oe2orHv9oaIvXP9WlFoiQZwz0evq9rQf2-AYGQTJ3XanWCPZ6McmlYYSjXPRil37ZMH-OQzPs4zh70b9luOj3qQXiDBe8MQztd4DZgtYGb6TS9l_piVfwl4QXl9SHLwaIcy8jNeZV6E1AlAbYif7DYcPJU-OAnUNsuqfBkl2KJZMBL99QrMATxxyHILBMMwoGb4" />
+                    <span>Alex Rivera</span>
+                  </div>
+                </div>
+                <div class="flex justify-between py-1 border-b border-surface-container">
+                  <span class="text-outline">Created At</span>
+                  <span class="text-on-surface">Oct 18, 2024 (6 days ago)</span>
+                </div>
+                <div class="flex justify-between py-1 border-b border-surface-container">
+                  <span class="text-outline">Due Date</span>
+                  <span class="text-tertiary font-medium">Oct 26, 2024 (2 days left)</span>
+                </div>
+                <div class="flex justify-between py-1">
+                  <span class="text-outline">Backend Sync</span>
+                  <span class="font-mono text-xs text-primary font-semibold">gRPC / Go Fiber OK</span>
+                </div>
+              </div>
+              <!-- Markdown Description / Spec -->
+              <div class="flex flex-col gap-space-xs">
+                <span class="font-label-sm text-label-sm text-outline uppercase tracking-wider">Specifications &amp;
+                  Checklist</span>
+                <div
+                  class="p-space-sm bg-surface-container-low rounded-lg font-body-sm text-body-sm text-on-surface leading-relaxed flex flex-col gap-space-sm">
+                  <p>Ensure all incoming HTTP traffic logs RFC3339 timestamps, trace IDs, latency in milliseconds, and
+                    status codes via <code
+                      class="bg-surface-container px-1 py-0.5 rounded font-mono text-xs text-tertiary">uber-go/zap</code>.
+                  </p>
+                  <div class="flex flex-col gap-1.5 pt-1">
+                    <label class="flex items-center gap-2 cursor-pointer">
+                      <input checked="" class="w-3.5 h-3.5 accent-primary rounded cursor-pointer" type="checkbox" />
+                      <span class="line-through text-outline">Implement Zap logger initialization in
+                        internal/logger</span>
+                    </label>
+                    <label class="flex items-center gap-2 cursor-pointer">
+                      <input checked="" class="w-3.5 h-3.5 accent-primary rounded cursor-pointer" type="checkbox" />
+                      <span class="line-through text-outline">Inject X-Request-ID middleware to context headers</span>
+                    </label>
+                    <label class="flex items-center gap-2 cursor-pointer">
+                      <input checked="" class="w-3.5 h-3.5 accent-primary rounded cursor-pointer" type="checkbox" />
+                      <span class="line-through text-outline">Build PanicRecoveryHandler with stack trace capture</span>
+                    </label>
+                    <label class="flex items-center gap-2 cursor-pointer">
+                      <input class="w-3.5 h-3.5 accent-primary rounded cursor-pointer" type="checkbox" />
+                      <span class="text-on-surface font-medium">Write benchmark tests with 10,000 req/sec load</span>
+                    </label>
+                  </div>
+                </div>
+              </div>
+              <!-- Activity Timeline -->
+              <div class="flex flex-col gap-space-xs">
+                <span class="font-label-sm text-label-sm text-outline uppercase tracking-wider">Activity History</span>
+                <div class="flex flex-col gap-space-sm pl-2">
+                  <div class="flex items-start gap-space-sm">
+                    <div class="w-2 h-2 rounded-full bg-primary mt-1.5 shrink-0"></div>
+                    <div class="flex flex-col font-body-sm text-body-sm">
+                      <span class="text-on-surface"><span class="font-medium">Alex Rivera</span> moved status to <span
+                          class="font-semibold text-secondary">In Progress</span></span>
+                      <span class="text-outline text-xs">Yesterday at 4:15 PM</span>
+                    </div>
+                  </div>
+                  <div class="flex items-start gap-space-sm">
+                    <div class="w-2 h-2 rounded-full bg-outline mt-1.5 shrink-0"></div>
+                    <div class="flex flex-col font-body-sm text-body-sm">
+                      <span class="text-on-surface"><span class="font-medium">Alex Rivera</span> attached git branch
+                        <code class="font-mono text-xs bg-surface-container px-1">feat/logger-middleware</code></span>
+                      <span class="text-outline text-xs">Oct 22 at 11:30 AM</span>
+                    </div>
+                  </div>
+                  <div class="flex items-start gap-space-sm">
+                    <div class="w-2 h-2 rounded-full bg-outline mt-1.5 shrink-0"></div>
+                    <div class="flex flex-col font-body-sm text-body-sm">
+                      <span class="text-on-surface">Task initialized from Go Project Template</span>
+                      <span class="text-outline text-xs">Oct 18 at 9:00 AM</span>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <!-- Go Backend Developer Notes / Comments -->
+              <div class="flex flex-col gap-space-xs pt-space-xs">
+                <span class="font-label-sm text-label-sm text-outline uppercase tracking-wider">Internal Notes</span>
+                <div class="relative">
+                  <textarea
+                    class="w-full p-space-sm bg-surface-container-low rounded-lg font-body-sm text-body-sm text-on-surface placeholder:text-outline focus:outline-none resize-none"
+                    id="taskCommentInput" placeholder="Add engineering remarks or curl test snippets..."
+                    rows="3"></textarea>
+                  <div class="flex justify-end mt-1">
+                    <button
+                      class="flex items-center gap-1 bg-primary text-on-primary font-label-sm text-label-sm px-space-md py-1 rounded hover:bg-primary-container transition-colors shadow-sm"
+                      onclick="submitTaskComment()">
+                      <span class="material-symbols-outlined text-xs">send</span> Post Note
+                    </button>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <!-- 5. MODALS & POPUPS -->
+        <!-- ADD TASK MODAL -->
+        <div
+          class="hidden fixed inset-0 z-50 flex items-center justify-center bg-inverse-surface/40 backdrop-blur-sm p-4"
+          id="addTaskModal">
+          <div
+            class="bg-surface-container-lowest rounded-xl shadow-xl w-full max-w-lg p-space-lg flex flex-col gap-space-md animate-fade-in">
+            <div class="flex items-center justify-between pb-space-xs">
+              <div class="flex items-center gap-2">
+                <div class="p-2 bg-primary-container/30 text-primary rounded-lg">
+                  <span class="material-symbols-outlined text-lg">add_task</span>
+                </div>
+                <div>
+                  <h3 class="font-headline-sm text-headline-sm text-on-surface">Create New Task</h3>
+                  <span class="font-body-sm text-body-sm text-on-surface-variant">Add a unit of work to the Go capstone
+                    sprint.</span>
+                </div>
+              </div>
+              <button class="text-outline hover:text-on-surface p-1 rounded-lg" onclick="closeAddTaskModal()">
+                <span class="material-symbols-outlined text-lg">close</span>
+              </button>
+            </div>
+            <form class="flex flex-col gap-space-sm" id="newTaskForm" onsubmit="handleAddTaskSubmit(event)">
+              <div class="flex flex-col gap-1">
+                <label class="font-label-md text-label-md text-on-surface">Task Title <span
+                    class="text-error">*</span></label>
+                <input
+                  class="p-space-sm bg-surface-container-low rounded-lg font-body-sm text-body-sm text-on-surface placeholder:text-outline focus:outline-none"
+                  id="newTaskTitle" placeholder="e.g. Implement HMAC token signature verification" required=""
+                  type="text" />
+              </div>
+              <div class="grid grid-cols-2 gap-space-sm">
+                <div class="flex flex-col gap-1">
+                  <label class="font-label-md text-label-md text-on-surface">Category Tag</label>
+                  <select
+                    class="p-space-sm bg-surface-container-low rounded-lg font-body-sm text-body-sm text-on-surface focus:outline-none"
+                    id="newTaskCategory">
+                    <option value="Go Backend">Go Backend</option>
+                    <option value="Database">Database</option>
+                    <option value="Capstone">Capstone</option>
+                    <option value="Frontend">Frontend</option>
+                    <option value="Documentation">Documentation</option>
+                  </select>
+                </div>
+                <div class="flex flex-col gap-1">
+                  <label class="font-label-md text-label-md text-on-surface">Priority</label>
+                  <select
+                    class="p-space-sm bg-surface-container-low rounded-lg font-body-sm text-body-sm text-on-surface focus:outline-none"
+                    id="newTaskPriority">
+                    <option value="High">High</option>
+                    <option selected="" value="Medium">Medium</option>
+                    <option value="Low">Low</option>
+                  </select>
+                </div>
+              </div>
+              <div class="grid grid-cols-2 gap-space-sm">
+                <div class="flex flex-col gap-1">
+                  <label class="font-label-md text-label-md text-on-surface">Initial Status</label>
+                  <select
+                    class="p-space-sm bg-surface-container-low rounded-lg font-body-sm text-body-sm text-on-surface focus:outline-none"
+                    id="newTaskStatus">
+                    <option selected="" value="pending">Pending</option>
+                    <option value="in-progress">In Progress</option>
+                    <option value="completed">Completed</option>
+                  </select>
+                </div>
+                <div class="flex flex-col gap-1">
+                  <label class="font-label-md text-label-md text-on-surface">Due Date</label>
+                  <input
+                    class="p-space-sm bg-surface-container-low rounded-lg font-body-sm text-body-sm text-on-surface focus:outline-none"
+                    id="newTaskDueDate" type="date" value="2024-10-31" />
+                </div>
+              </div>
+              <div class="flex flex-col gap-1">
+                <label class="font-label-md text-label-md text-on-surface">Description</label>
+                <textarea
+                  class="p-space-sm bg-surface-container-low rounded-lg font-body-sm text-body-sm text-on-surface placeholder:text-outline focus:outline-none resize-none"
+                  id="newTaskDesc" placeholder="Provide background context, PR references or API contracts..."
+                  rows="3"></textarea>
+              </div>
+              <div class="flex items-center justify-end gap-space-sm pt-space-xs">
+                <button
+                  class="px-space-md py-space-sm rounded-lg font-label-md text-label-md text-on-surface-variant hover:bg-surface-container transition-colors"
+                  onclick="closeAddTaskModal()" type="button">
+                  Cancel
+                </button>
+                <button
+                  class="px-space-md py-space-sm rounded-lg font-label-md text-label-md bg-primary text-on-primary hover:bg-primary-container hover:text-on-primary-container transition-colors shadow-sm"
+                  type="submit">
+                  Save Task
+                </button>
+              </div>
+            </form>
+          </div>
+        </div>
+        <!-- EDIT TASK MODAL -->
+        <div
+          class="hidden fixed inset-0 z-50 flex items-center justify-center bg-inverse-surface/40 backdrop-blur-sm p-4"
+          id="editTaskModal">
+          <div
+            class="bg-surface-container-lowest rounded-xl shadow-xl w-full max-w-lg p-space-lg flex flex-col gap-space-md animate-fade-in">
+            <div class="flex items-center justify-between pb-space-xs">
+              <div class="flex items-center gap-2">
+                <div class="p-2 bg-secondary-container/40 text-secondary rounded-lg">
+                  <span class="material-symbols-outlined text-lg">edit_note</span>
+                </div>
+                <div>
+                  <h3 class="font-headline-sm text-headline-sm text-on-surface">Quick Edit Task</h3>
+                  <span class="font-body-sm text-body-sm text-on-surface-variant" id="editModalSubtitle">Update
+                    attributes for #GO-TASK-104</span>
+                </div>
+              </div>
+              <button class="text-outline hover:text-on-surface p-1 rounded-lg" onclick="closeEditModal()">
+                <span class="material-symbols-outlined text-lg">close</span>
+              </button>
+            </div>
+            <form class="flex flex-col gap-space-sm" id="editTaskForm" onsubmit="handleEditTaskSubmit(event)">
+              <input id="editTaskId" type="hidden" />
+              <div class="flex flex-col gap-1">
+                <label class="font-label-md text-label-md text-on-surface">Title</label>
+                <input
+                  class="p-space-sm bg-surface-container-low rounded-lg font-body-sm text-body-sm text-on-surface focus:outline-none"
+                  id="editTaskTitle" required="" type="text" />
+              </div>
+              <div class="grid grid-cols-2 gap-space-sm">
+                <div class="flex flex-col gap-1">
+                  <label class="font-label-md text-label-md text-on-surface">Status</label>
+                  <select
+                    class="p-space-sm bg-surface-container-low rounded-lg font-body-sm text-body-sm text-on-surface focus:outline-none"
+                    id="editTaskStatus">
+                    <option value="pending">Pending</option>
+                    <option value="in-progress">In Progress</option>
+                    <option value="completed">Completed</option>
+                    <option value="overdue">Overdue</option>
+                  </select>
+                </div>
+                <div class="flex flex-col gap-1">
+                  <label class="font-label-md text-label-md text-on-surface">Priority</label>
+                  <select
+                    class="p-space-sm bg-surface-container-low rounded-lg font-body-sm text-body-sm text-on-surface focus:outline-none"
+                    id="editTaskPriority">
+                    <option value="High">High</option>
+                    <option value="Medium">Medium</option>
+                    <option value="Low">Low</option>
+                  </select>
+                </div>
+              </div>
+              <div class="flex items-center justify-end gap-space-sm pt-space-xs">
+                <button
+                  class="px-space-md py-space-sm rounded-lg font-label-md text-label-md text-on-surface-variant hover:bg-surface-container transition-colors"
+                  onclick="closeEditModal()" type="button">
+                  Cancel
+                </button>
+                <button
+                  class="px-space-md py-space-sm rounded-lg font-label-md text-label-md bg-primary text-on-primary hover:bg-primary-container hover:text-on-primary-container transition-colors shadow-sm"
+                  type="submit">
+                  Update Task
+                </button>
+              </div>
+            </form>
+          </div>
+        </div>
+        <!-- TOAST NOTIFICATION CONTAINER -->
+        <div
+          class="hidden fixed bottom-6 right-6 z-50 bg-inverse-surface text-inverse-on-surface px-space-md py-space-sm rounded-lg shadow-xl flex items-center gap-space-sm animate-bounce-subtle"
+          id="toastNotification">
+          <span class="material-symbols-outlined text-primary-fixed text-lg" id="toastIcon">check_circle</span>
+          <span class="font-body-sm text-body-sm" id="toastMessage">Action completed successfully.</span>
+        </div>
+      </div>
+      <!-- INTERACTION JAVASCRIPT -->
+      <script>
+        let activeStatusFilter = 'all';
+        let activeCategoryFilter = 'all';
+        let activePriorityFilter = 'all';
+        let isDrawerOpen = false;
+
+        function showToast(message, icon = 'check_circle') {
+          const toast = document.getElementById('toastNotification');
+          const msg = document.getElementById('toastMessage');
+          const icn = document.getElementById('toastIcon');
+          msg.textContent = message;
+          icn.textContent = icon;
+          toast.classList.remove('hidden');
+          setTimeout(() => {
+            toast.classList.add('hidden');
+          }, 2800);
+        }
+
+        // Dual View Switching
+        function switchView(view) {
+          const tableView = document.getElementById('tableView');
+          const kanbanView = document.getElementById('kanbanView');
+          const btnTable = document.getElementById('viewBtnTable');
+          const btnKanban = document.getElementById('viewBtnKanban');
+
+          if (view === 'table') {
+            tableView.classList.remove('hidden');
+            kanbanView.classList.add('hidden');
+            btnTable.className = "flex items-center gap-space-xs px-space-sm py-1.5 rounded-md font-label-md text-label-md bg-surface-container-lowest text-on-surface shadow-sm transition-all";
+            btnKanban.className = "flex items-center gap-space-xs px-space-sm py-1.5 rounded-md font-label-md text-label-md text-on-surface-variant hover:text-on-surface transition-all";
+          } else {
+            tableView.classList.add('hidden');
+            kanbanView.classList.remove('hidden');
+            btnKanban.className = "flex items-center gap-space-xs px-space-sm py-1.5 rounded-md font-label-md text-label-md bg-surface-container-lowest text-on-surface shadow-sm transition-all";
+            btnTable.className = "flex items-center gap-space-xs px-space-sm py-1.5 rounded-md font-label-md text-label-md text-on-surface-variant hover:text-on-surface transition-all";
+          }
+        }
+
+        // Filter & Search Logic
+        function setStatusFilter(status) {
+          activeStatusFilter = status;
+          document.querySelectorAll('.status-filter-pill').forEach(btn => {
+            if (btn.getAttribute('data-status') === status) {
+              btn.classList.add('active', 'bg-surface-container-highest', 'text-on-surface', 'font-medium');
+              btn.classList.remove('bg-surface-container-lowest', 'text-on-surface-variant');
+            } else {
+              btn.classList.remove('active', 'bg-surface-container-highest', 'text-on-surface', 'font-medium');
+              btn.classList.add('bg-surface-container-lowest', 'text-on-surface-variant');
+            }
+          });
+          filterTasks();
+        }
+
+        function setCategoryFilter(category) {
+          activeCategoryFilter = category;
+          document.querySelectorAll('.cat-pill').forEach(btn => {
+            if (btn.getAttribute('data-cat') === category) {
+              btn.classList.add('active', 'bg-primary-container', 'text-on-primary-container', 'font-medium');
+              btn.classList.remove('bg-surface-container-lowest', 'text-on-surface-variant');
+            } else {
+              btn.classList.remove('active', 'bg-primary-container', 'text-on-primary-container', 'font-medium');
+              btn.classList.add('bg-surface-container-lowest', 'text-on-surface-variant');
+            }
+          });
+          filterTasks();
+        }
+
+        function setPriorityFilter(priority) {
+          activePriorityFilter = priority;
+          document.querySelectorAll('.pri-pill').forEach(btn => {
+            if (btn.getAttribute('data-pri') === priority) {
+              btn.classList.add('active', 'bg-surface-container', 'text-on-surface', 'font-medium');
+            } else {
+              btn.classList.remove('active', 'bg-surface-container', 'text-on-surface', 'font-medium');
+            }
+          });
+          filterTasks();
+        }
+
+        function filterTasks() {
+          const searchInput = document.getElementById('taskSearchInput');
+          const query = searchInput.value.toLowerCase().trim();
+          const clearBtn = document.getElementById('clearSearchBtn');
+
+          if (query.length > 0) {
+            clearBtn.classList.remove('hidden');
+          } else {
+            clearBtn.classList.add('hidden');
+          }
+
+          const rows = document.querySelectorAll('#taskTableBody .task-row');
+          let visibleCount = 0;
+
+          rows.forEach(row => {
+            const status = row.getAttribute('data-status');
+            const cat = row.getAttribute('data-cat');
+            const pri = row.getAttribute('data-pri');
+            const text = row.innerText.toLowerCase();
+
+            const matchesStatus = (activeStatusFilter === 'all') || (status === activeStatusFilter);
+            const matchesCategory = (activeCategoryFilter === 'all') || (cat === activeCategoryFilter);
+            const matchesPriority = (activePriorityFilter === 'all') || (pri === activePriorityFilter);
+            const matchesQuery = !query || text.includes(query);
+
+            if (matchesStatus && matchesCategory && matchesPriority && matchesQuery) {
+              row.classList.remove('hidden');
+              visibleCount++;
+            } else {
+              row.classList.add('hidden');
+            }
+          });
+
+          document.getElementById('taskCountBadge').textContent = `Showing ${visibleCount} of 24 tasks`;
+        }
+
+        function clearSearch() {
+          const searchInput = document.getElementById('taskSearchInput');
+          searchInput.value = '';
+          filterTasks();
+        }
+
+        // Row Selection & Batch Actions
+        function handleTaskCheckbox(chk) {
+          updateBatchBar();
+        }
+
+        function toggleSelectAll(selectAllChk) {
+          const visibleCheckboxes = document.querySelectorAll('#taskTableBody .task-row:not(.hidden) .task-select-chk');
+          visibleCheckboxes.forEach(chk => {
+            chk.checked = selectAllChk.checked;
+          });
+          updateBatchBar();
+        }
+
+        function updateBatchBar() {
+          const checked = document.querySelectorAll('#taskTableBody .task-select-chk:checked');
+          const batchBar = document.getElementById('batchActionBar');
+          const batchText = document.getElementById('batchCountText');
+
+          if (checked.length > 0) {
+            batchBar.classList.remove('hidden');
+            batchText.textContent = `${checked.length} task${checked.length > 1 ? 's' : ''} selected`;
+          } else {
+            batchBar.classList.add('hidden');
+            const selectAll = document.getElementById('selectAllCheckbox');
+            if (selectAll) selectAll.checked = false;
+          }
+        }
+
+        function clearAllSelections() {
+          document.querySelectorAll('.task-select-chk').forEach(c => c.checked = false);
+          const selectAll = document.getElementById('selectAllCheckbox');
+          if (selectAll) selectAll.checked = false;
+          updateBatchBar();
+        }
+
+        function batchMarkCompleted() {
+          const checked = document.querySelectorAll('#taskTableBody .task-select-chk:checked');
+          checked.forEach(chk => {
+            const row = chk.closest('tr');
+            row.setAttribute('data-status', 'completed');
+            const select = row.querySelector('select');
+            if (select) select.value = 'completed';
+          });
+          showToast(`${checked.length} tasks marked as Completed!`);
+          clearAllSelections();
+          filterTasks();
+        }
+
+        function batchChangePriority() {
+          const checked = document.querySelectorAll('#taskTableBody .task-select-chk:checked');
+          showToast(`Updated priority on ${checked.length} tasks`);
+          clearAllSelections();
+        }
+
+        function batchDelete() {
+          const checked = document.querySelectorAll('#taskTableBody .task-select-chk:checked');
+          checked.forEach(chk => {
+            chk.closest('tr').remove();
+          });
+          showToast(`Deleted ${checked.length} tasks.`);
+          clearAllSelections();
+          filterTasks();
+        }
+
+        function deleteSingleTask(id) {
+          const row = document.querySelector(`tr[data-id="${id}"]`);
+          if (row) {
+            row.remove();
+            showToast(`Removed task #${id}`, 'delete');
+            filterTasks();
+          }
+        }
+
+        function updateRowStatus(selectEl, id) {
+          const row = selectEl.closest('tr');
+          row.setAttribute('data-status', selectEl.value);
+          showToast(`Updated #${id} to ${selectEl.value}`);
+        }
+
+        // Drawer / Task Detail Actions
+        function handleRowClick(event, taskId) {
+          openTaskDetail(taskId);
+        }
+
+        function openTaskDetail(taskId) {
+          const drawer = document.getElementById('taskDrawer');
+          const viewContainer = document.getElementById('viewContainer');
+
+          drawer.classList.remove('hidden', 'translate-x-full');
+          drawer.classList.add('translate-x-0');
+          viewContainer.classList.add('lg:pr-96');
+          isDrawerOpen = true;
+
+          document.getElementById('drawerTaskId').textContent = `#${taskId}`;
+          showToast(`Loaded details for #${taskId}`, 'info');
+        }
+
+        function closeTaskDetail() {
+          const drawer = document.getElementById('taskDrawer');
+          const viewContainer = document.getElementById('viewContainer');
+
+          drawer.classList.add('translate-x-full');
+          setTimeout(() => {
+            drawer.classList.add('hidden');
+          }, 300);
+          viewContainer.classList.remove('lg:pr-96');
+          isDrawerOpen = false;
+        }
+
+        function submitTaskComment() {
+          const input = document.getElementById('taskCommentInput');
+          if (input.value.trim() !== '') {
+            showToast('Go sync: Developer note saved');
+            input.value = '';
+          }
+        }
+
+        // Modals Management
+        function openAddTaskModal() {
+          document.getElementById('addTaskModal').classList.remove('hidden');
+        }
+
+        function closeAddTaskModal() {
+          document.getElementById('addTaskModal').classList.add('hidden');
+        }
+
+        function handleAddTaskSubmit(e) {
+          e.preventDefault();
+          const title = document.getElementById('newTaskTitle').value;
+          const cat = document.getElementById('newTaskCategory').value;
+          const pri = document.getElementById('newTaskPriority').value;
+          const status = document.getElementById('newTaskStatus').value;
+
+          const tbody = document.getElementById('taskTableBody');
+          const newId = `GO-TASK-${Math.floor(109 + Math.random() * 90)}`;
+
+          const newRow = document.createElement('tr');
+          newRow.setAttribute('data-id', newId);
+          newRow.setAttribute('data-status', status);
+          newRow.setAttribute('data-cat', cat);
+          newRow.setAttribute('data-pri', pri);
+          newRow.className = "task-row group bg-surface-container-lowest hover:bg-surface-container-low/70 transition-colors cursor-pointer";
+          newRow.onclick = (ev) => handleRowClick(ev, newId);
+
+          newRow.innerHTML = `
+      <td class="py-space-sm px-space-md text-center" onclick="event.stopPropagation()">
+        <input type="checkbox" class="task-select-chk w-4 h-4 rounded text-primary focus:ring-0 cursor-pointer accent-primary" onchange="handleTaskCheckbox(this)">
+      </td>
+      <td class="py-space-sm px-space-md">
+        <div class="flex flex-col">
+          <div class="flex items-center gap-space-xs">
+            <span class="font-label-sm text-label-sm text-primary font-semibold">#${newId}</span>
+            <span class="font-body-md text-body-md font-semibold text-on-surface">${title}</span>
+          </div>
+          <span class="font-body-sm text-body-sm text-outline truncate max-w-md">Added via quick modal dispatch.</span>
+        </div>
+      </td>
+      <td class="py-space-sm px-space-md hidden md:table-cell">
+        <span class="px-space-xs py-0.5 rounded font-label-sm text-label-sm bg-surface-container text-on-surface">${cat}</span>
+      </td>
+      <td class="py-space-sm px-space-md">
+        <span class="px-space-xs py-0.5 rounded-full font-label-sm text-label-sm ${pri === 'High' ? 'bg-tertiary-fixed text-on-tertiary-fixed' : 'bg-secondary-fixed text-on-secondary-fixed-variant'} flex items-center gap-1 w-max font-medium">
+          <span class="w-1.5 h-1.5 rounded-full ${pri === 'High' ? 'bg-tertiary' : 'bg-secondary'}"></span> ${pri}
+        </span>
+      </td>
+      <td class="py-space-sm px-space-md" onclick="event.stopPropagation()">
+        <select onchange="updateRowStatus(this, '${newId}')" class="font-label-sm text-label-sm bg-surface-container text-on-surface px-2 py-1 rounded-md font-medium cursor-pointer focus:outline-none">
+          <option value="pending" ${status === 'pending' ? 'selected' : ''}>Pending</option>
+          <option value="in-progress" ${status === 'in-progress' ? 'selected' : ''}>In Progress</option>
+          <option value="completed" ${status === 'completed' ? 'selected' : ''}>Completed</option>
+          <option value="overdue">Overdue</option>
+        </select>
+      </td>
+      <td class="py-space-sm px-space-md hidden sm:table-cell">
+        <div class="flex items-center gap-1 font-body-sm text-body-sm text-on-surface-variant">
+          <span class="material-symbols-outlined text-sm">schedule</span>
+          <span>Oct 31, 2024</span>
+        </div>
+      </td>
+      <td class="py-space-sm px-space-md text-right" onclick="event.stopPropagation()">
+        <div class="flex items-center justify-end gap-1">
+          <button title="Quick Edit" onclick="openEditModal('${newId}')" class="p-1 text-outline hover:text-on-surface hover:bg-surface-container rounded transition-colors">
+            <span class="material-symbols-outlined text-base">edit</span>
+          </button>
+          <button title="Delete" onclick="deleteSingleTask('${newId}')" class="p-1 text-outline hover:text-error hover:bg-error-container/40 rounded transition-colors">
+            <span class="material-symbols-outlined text-base">delete</span>
+          </button>
+        </div>
+      </td>
+    `;
+
+          tbody.prepend(newRow);
+          closeAddTaskModal();
+          document.getElementById('newTaskForm').reset();
+          showToast(`Task #${newId} created successfully!`);
+          filterTasks();
+        }
+
+        function openEditModal(taskId) {
+          const row = document.querySelector(`tr[data-id="${taskId}"]`);
+          document.getElementById('editTaskId').value = taskId;
+          document.getElementById('editModalSubtitle').textContent = `Update attributes for #${taskId}`;
+
+          if (row) {
+            const titleSpan = row.querySelector('.font-body-md');
+            document.getElementById('editTaskTitle').value = titleSpan ? titleSpan.textContent : '';
+            document.getElementById('editTaskStatus').value = row.getAttribute('data-status') || 'pending';
+            document.getElementById('editTaskPriority').value = row.getAttribute('data-pri') || 'Medium';
+          }
+          document.getElementById('editTaskModal').classList.remove('hidden');
+        }
+
+        function closeEditModal() {
+          document.getElementById('editTaskModal').classList.add('hidden');
+        }
+
+        function handleEditTaskSubmit(e) {
+          e.preventDefault();
+          const id = document.getElementById('editTaskId').value;
+          const title = document.getElementById('editTaskTitle').value;
+          const status = document.getElementById('editTaskStatus').value;
+          const pri = document.getElementById('editTaskPriority').value;
+
+          const row = document.querySelector(`tr[data-id="${id}"]`);
+          if (row) {
+            row.setAttribute('data-status', status);
+            row.setAttribute('data-pri', pri);
+            const titleEl = row.querySelector('.font-body-md');
+            if (titleEl) titleEl.textContent = title;
+            const select = row.querySelector('select');
+            if (select) select.value = status;
+          }
+
+          closeEditModal();
+          showToast(`Task #${id} updated!`);
+          filterTasks();
+        }
+
+        // Export dropdown
+        function toggleExportMenu() {
+          const menu = document.getElementById('exportMenu');
+          menu.classList.toggle('hidden');
+        }
+
+        function triggerExport(format) {
+          toggleExportMenu();
+          showToast(`Generated ${format} dump via Go engine`);
+        }
+
+        // Close menus on outside click
+        window.addEventListener('click', (e) => {
+          const exportBtn = document.getElementById('exportDropdownBtn');
+          const exportMenu = document.getElementById('exportMenu');
+          if (!exportBtn.contains(e.target) && !exportMenu.contains(e.target)) {
+            exportMenu.classList.add('hidden');
+          }
+        });
+
+        // Sorting
+        function sortTasks() {
+          const val = document.getElementById('sortSelect').value;
+          const tbody = document.getElementById('taskTableBody');
+          const rows = Array.from(tbody.querySelectorAll('.task-row'));
+
+          rows.sort((a, b) => {
+            if (val === 'title-asc') {
+              const titleA = a.querySelector('.font-body-md').innerText.toLowerCase();
+              const titleB = b.querySelector('.font-body-md').innerText.toLowerCase();
+              return titleA.localeCompare(titleB);
+            } else if (val === 'priority-desc') {
+              const priWeights = { 'High': 3, 'Medium': 2, 'Low': 1 };
+              return priWeights[b.getAttribute('data-pri')] - priWeights[a.getAttribute('data-pri')];
+            }
+            return 0;
+          });
+
+          rows.forEach(r => tbody.appendChild(r));
+          showToast(`Sorted by ${val}`);
+        }
+
+        function sortByColumn(col) {
+          showToast(`Sorted by column: ${col}`);
+        }
+      </script>
+    </main>
+  </div>
+  <script src="/static/js/app.js"></script>
+</body>
+
+</html>
